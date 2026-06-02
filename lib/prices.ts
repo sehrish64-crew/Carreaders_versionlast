@@ -37,9 +37,8 @@ export const CURRENCY_SYMBOLS: Record<string, string> = {
   'UAH': '₴',
 }
 
-export function getPrice(packageId: 'basic' | 'standard' | 'premium', currency = 'USD') {
-  const pricing = PRICING_MAP[currency] || PRICING_MAP['USD']
-  return pricing[packageId]
+export function getPrice(packageId: 'basic' | 'standard' | 'premium', _currency = 'GBP') {
+  return PRICING_MAP['GBP'][packageId]
 }
 
 export function getCurrencySymbol(currency = 'USD') {
