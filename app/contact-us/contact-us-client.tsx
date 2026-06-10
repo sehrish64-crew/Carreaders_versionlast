@@ -23,7 +23,7 @@ const contactInfo = [
       'SIU OFFICES, 4-6 GREATOREX STREET',
       'LONDON',
       'UNITED KINGDOM E1 5NF',
-      'WhatsApp: +44 7828 760930'
+      'WhatsApp: +44 7555 979712'
     ],
     gradient: 'from-[#780000] to-black'
   }

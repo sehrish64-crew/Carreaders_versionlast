@@ -61,7 +61,7 @@ export default function Footer() {
               Office: SIU OFFICES, 4-6 GREATOREX STREET, LONDON, UNITED KINGDOM E1 5NF
             </span>
             <span className="block mt-1 text-sm text-white/80">
-              WhatsApp: <a href="https://wa.me/447828760930" target="_blank" rel="noreferrer" className="text-emerald-300 hover:text-white">+44 7828 760930</a>
+              WhatsApp: <a href="https://wa.me/447555979712" target="_blank" rel="noreferrer" className="text-emerald-300 hover:text-white">+44 7828 760930</a>
             </span> */}
 
           </p>
@@ -84,7 +84,7 @@ export default function Footer() {
             Office: SIU OFFICES, 4-6 GREATOREX STREET, LONDON, UNITED KINGDOM E1 5NF
           </p>
           <p className="text-sm text-white/70 mt-1">
-            WhatsApp: <a href="https://wa.me/447828760930" target="_blank" rel="noreferrer" className="inline-flex items-center text-emerald-300 hover:text-white" aria-label="WhatsApp +44 7828 760930">
+            WhatsApp: <a href="https://wa.me/447555979712" target="_blank" rel="noreferrer" className="inline-flex items-center text-emerald-300 hover:text-white" aria-label="WhatsApp +44 7828 760930">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
                 <path d="M20.52 3.48A11.94 11.94 0 0012 .5 11.9 11.9 0 003.5 12c0 2.1.55 4.12 1.6 5.9L2 22l4.7-1.6A11.9 11.9 0 0012 23.5 11.94 11.94 0 0020.52 3.48zM12 21.5c-1.9 0-3.76-.5-5.36-1.45l-.38-.22-2.78.95.95-2.72-.24-.4A9.5 9.5 0 1121.5 12 9.47 9.47 0 0112 21.5z" />
                 <path d="M17.6 14.2c-.3-.15-1.78-.87-2.06-.97s-.48-.15-.68.15-.78.97-.96 1.17-.35.22-.65.07a7.03 7.03 0 01-2.06-1.26c-.38-.34-.65-.76-.72-1.06s-.01-.59.21-.8c.22-.22.48-.56.73-.83.25-.27.33-.47.5-.78.17-.31.08-.58-.04-.75-.12-.17-.68-1.63-.93-2.22-.24-.58-.49-.5-.68-.51l-.58-.01c-.2 0-.52.07-.8.35s-1.05 1.03-1.05 2.51 1.08 2.9 1.23 3.1c.15.2 2.12 3.33 5.14 4.67 3.02 1.35 3.02.9 3.57.85.55-.05 1.78-.73 2.03-1.44.25-.71.25-1.32.18-1.45-.07-.13-.25-.2-.55-.35z" />
@@ -97,7 +97,7 @@ export default function Footer() {
 
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="https://wa.me/447828760930"
+          href="https://wa.me/447555979712"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-600 text-white shadow-2xl shadow-black/20 ring-1 ring-white/20 transition hover:bg-emerald-700"

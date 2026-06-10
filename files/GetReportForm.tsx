@@ -280,7 +280,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
 
   if (!isOpen) return null
 
-  const SHOPIFY_URL = 'https://techbriton-2.myshopify.com/products/digital-report?variant=52819992641864'
+  const SHOPIFY_URL = 'https://pay.gocardless.com/BRT01KTRT8X5235JC0HEVR55R28MA'
 
   return (
     <>

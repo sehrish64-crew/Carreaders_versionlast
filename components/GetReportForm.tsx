@@ -61,7 +61,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const SHOPIFY_URL = 'https://techbriton-2.myshopify.com/products/digital-report?variant=52819992641864'
+  const SHOPIFY_URL = 'https://pay.gocardless.com/BRT01KTRT8X5235JC0HEVR55R28MA'
 
   const validateForm = () => {
     setError('')
