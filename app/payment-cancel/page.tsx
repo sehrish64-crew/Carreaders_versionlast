@@ -11,8 +11,8 @@ export default function PaymentCancel() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 mb-4">
-            <span className="text-yellow-700 text-2xl">!</span>
+          <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 mb-4">
+            <span className="text-blue-700 text-2xl">!</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Payment Cancelled</h1>
           <p className="text-gray-600 mb-6">
@@ -22,7 +22,7 @@ export default function PaymentCancel() {
           <div className="space-y-3">
             <Button
               onClick={() => router.back()}
-              className="w-full bg-red-700 hover:bg-red-800"
+              className="w-full bg-blue-700 hover:bg-blue-800"
             >
               Try Again
             </Button>

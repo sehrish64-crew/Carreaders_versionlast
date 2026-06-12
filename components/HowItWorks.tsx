@@ -59,16 +59,16 @@ export default function HowItWorks() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-[#780000]/10 via-white to-[#780000]/5 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-blue-100 via-white to-sky-100 relative overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
 
         {/* HEADER */}
         <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-3">
             {t('howitworks_title')}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700">
+          <p className="text-xs sm:text-sm md:text-lg text-gray-700">
             {t('howitworks_subtitle')}
           </p>
         </div>
@@ -91,9 +91,9 @@ export default function HowItWorks() {
 
                   {/* NUMBER BADGE */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-[#780000] blur-xl opacity-30 rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-blue-400 blur-xl opacity-30 rounded-2xl"></div>
 
-                    <div className="w-16 h-16 bg-[#780000] rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition">
+                    <div className="w-16 h-16 bg-sky-700 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition">
                       <span className="text-white text-2xl font-bold">
                         {step.number}
                       </span>
@@ -103,17 +103,17 @@ export default function HowItWorks() {
                   {/* CONTENT */}
                   <div>
 
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-[#780000] transition">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 hover:text-blue-500 transition">
                       {t(step.titleKey)}
                     </h3>
 
-                    <p className="text-gray-600 text-sm mb-3 leading-relaxed">
+                    <p className="text-gray-600 text-xs sm:text-sm mb-3 leading-relaxed">
                       {t(step.descKey)}
                     </p>
 
                     <a
                       href="#"
-                      className="inline-flex items-center gap-2 text-[#780000] font-semibold hover:opacity-80"
+                      className="inline-flex items-center gap-2 text-sky-700 text-sm sm:text-base font-semibold hover:opacity-80"
                     >
                       {t(step.linkKey)}
                       <ArrowRight className="w-4 h-4" />
@@ -133,10 +133,10 @@ export default function HowItWorks() {
         <div className="text-center mt-12">
           <Link
             href="/pricing"
-            className="inline-flex items-center gap-2 bg-[#780000] hover:bg-[#5a0000] text-white font-bold px-8 py-4 rounded-full transition hover:scale-105"
+            className="inline-flex items-center gap-1.5 sm:gap-2 bg-sky-700 hover:bg-sky-800 text-white font-bold px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base transition hover:scale-105"
           >
             {t('howitworks_cta')}
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>
 

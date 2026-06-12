@@ -29,10 +29,10 @@ export default function WhyAutoFactsCheck() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             {t('why_title')}
           </h2>
-          <p className="text-xs sm:text-sm md:text-base lg:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-[11px] sm:text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed">
             {t('why_subtitle')}
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function WhyAutoFactsCheck() {
                 className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                   }`}
               >
-                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-1 sm:mb-2">
+                <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">
                   Starting from
                 </div>
-                <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 animate-pulse">
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 animate-pulse">
                   $40
                 </div>
               </div>
@@ -71,10 +71,10 @@ export default function WhyAutoFactsCheck() {
                 className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                   }`}
               >
-                <p className="text-xs sm:text-base md:text-xl lg:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">
+                <p className="text-[11px] sm:text-sm md:text-lg lg:text-xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">
                   for a vehicle history report
                 </p>
-                <p className="text-2xs sm:text-xs md:text-base lg:text-lg text-white/90 leading-relaxed">
+                <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-white/90 leading-relaxed">
                   Verify the VIN number and gain valuable insights before buying a used car. Get started today for peace of mind.
                 </p>
               </div>
@@ -141,7 +141,7 @@ export default function WhyAutoFactsCheck() {
 
               {/* Vehicle History Card */}
               <div className="group animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-amber-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
                   <div className="inline-flex w-12 h-12 bg-primary/20 rounded-xl items-center justify-center text-primary font-bold text-xl mb-6 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                     ◆
                   </div>
@@ -159,8 +159,8 @@ export default function WhyAutoFactsCheck() {
         {/* Mobile Slider */}
         <div className="block md:hidden mt-20 pt-12 border-t border-gray-200">
           <div className="mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Comprehensive VIN Analysis</h3>
-            <p className="text-gray-600 text-base sm:text-lg">Industry-leading data aggregation and verification</p>
+            <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-2">Comprehensive VIN Analysis</h3>
+            <p className="text-gray-600 text-sm sm:text-base">Industry-leading data aggregation and verification</p>
           </div>
           <Swiper
             spaceBetween={16}
@@ -178,10 +178,10 @@ export default function WhyAutoFactsCheck() {
                   <div className="inline-flex w-14 h-14 bg-primary/20 rounded-xl items-center justify-center text-primary font-bold text-2xl mb-6 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                     ✓
                   </div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Verification Method</p>
-                  <p className="text-lg sm:text-xl font-black text-gray-900 leading-tight">By VIN & Plate</p>
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Verification Method</p>
+                  <p className="text-base sm:text-lg font-black text-gray-900 leading-tight">By VIN & Plate</p>
                 </div>
-                <p className="text-xs text-gray-500">Multiple lookup options</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Multiple lookup options</p>
               </div>
             </SwiperSlide>
 
@@ -192,10 +192,10 @@ export default function WhyAutoFactsCheck() {
                   <div className="inline-flex w-14 h-14 bg-accent/20 rounded-xl items-center justify-center text-accent font-bold text-2xl mb-6 group-hover:bg-accent group-hover:text-accent-foreground group-hover:scale-110 transition-all duration-300">
                     →
                   </div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Daily Searches</p>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">45K+</p>
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Daily Searches</p>
+                  <p className="text-xl sm:text-2xl font-black text-gray-900">45K+</p>
                 </div>
-                <p className="text-xs text-gray-500">Active verifications</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Active verifications</p>
               </div>
             </SwiperSlide>
 
@@ -206,10 +206,10 @@ export default function WhyAutoFactsCheck() {
                   <div className="inline-flex w-14 h-14 bg-secondary/20 rounded-xl items-center justify-center text-secondary font-bold text-2xl mb-6 group-hover:bg-secondary group-hover:text-secondary-foreground group-hover:scale-110 transition-all duration-300">
                     ⊕
                   </div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Data Sources</p>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">70+</p>
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Data Sources</p>
+                  <p className="text-xl sm:text-2xl font-black text-gray-900">70+</p>
                 </div>
-                <p className="text-xs text-gray-500">Databases & sources</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Databases & sources</p>
               </div>
             </SwiperSlide>
 
@@ -220,10 +220,10 @@ export default function WhyAutoFactsCheck() {
                   <div className="inline-flex w-14 h-14 bg-primary/20 rounded-xl items-center justify-center text-primary font-bold text-2xl mb-6 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                     ◆
                   </div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Report Scope</p>
-                  <p className="text-lg sm:text-xl font-black text-gray-900 leading-tight">Complete History</p>
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Report Scope</p>
+                  <p className="text-base sm:text-lg font-black text-gray-900 leading-tight">Complete History</p>
                 </div>
-                <p className="text-xs text-gray-500">Ownership & service records</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Ownership & service records</p>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -277,14 +277,14 @@ export default function WhyAutoFactsCheck() {
               <div className="space-y-8">
                 <div className="text-center md:text-left">
                   <p className="text-sm font-bold text-white/80 mb-6 uppercase tracking-wider">Trusted by millions worldwide By Industry Leaders</p>
-                  <div className="grid grid-cols-2 gap-6 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <div className="grid grid-cols-2 gap-4 sm:gap-6 bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/20">
                     <div className="flex items-center justify-center md:justify-start">
                       <Image
                         src="/forbes-logo.svg"
                         alt="Forbes"
                         width={100}
                         height={50}
-                        className="h-10 w-auto object-contain drop-shadow-lg"
+                        className="h-7 w-auto object-contain drop-shadow-lg sm:h-8 md:h-10"
                       />
                     </div>
                     <div className="flex items-center justify-center md:justify-start">
@@ -293,7 +293,7 @@ export default function WhyAutoFactsCheck() {
                         alt="Carfax"
                         width={100}
                         height={50}
-                        className="h-10 w-auto object-contain drop-shadow-lg"
+                        className="h-7 w-auto object-contain drop-shadow-lg sm:h-8 md:h-10"
                       />
                     </div>
                     <div className="flex items-center justify-center md:justify-start">
@@ -302,7 +302,7 @@ export default function WhyAutoFactsCheck() {
                         alt="NHTSA"
                         width={100}
                         height={50}
-                        className="h-10 w-auto object-contain drop-shadow-lg"
+                        className="h-7 w-auto object-contain drop-shadow-lg sm:h-8 md:h-10"
                       />
                     </div>
                     <div className="flex items-center justify-center md:justify-start">
@@ -311,7 +311,7 @@ export default function WhyAutoFactsCheck() {
                         alt="NICB"
                         width={100}
                         height={50}
-                        className="h-10 w-auto object-contain drop-shadow-lg"
+                        className="h-7 w-auto object-contain drop-shadow-lg sm:h-8 md:h-10"
                       />
                     </div>
                   </div>

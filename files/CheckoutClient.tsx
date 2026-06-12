@@ -18,7 +18,7 @@ export default function CheckoutClient({ order }: { order: any }) {
           <div className="text-lg font-bold">{order.package_type}</div>
           <div className="text-sm text-gray-600">{order.currency} {order.amount}</div>
         </div>
-        <div className="text-red-600">No Paddle price ID configured for {order.package_type}</div>
+        <div className="text-blue-600">No Paddle price ID configured for {order.package_type}</div>
       </div>
     );
   }
@@ -31,7 +31,7 @@ export default function CheckoutClient({ order }: { order: any }) {
         <div className="text-sm text-gray-600">{order.currency} {order.amount}</div>
       </div>
 
-      {error && <div className="text-red-600 mb-3">{error}</div>}
+      {error && <div className="text-blue-600 mb-3">{error}</div>}
 
       <BuyButton priceId={priceId} quantity={1}>
         Pay with Paddle

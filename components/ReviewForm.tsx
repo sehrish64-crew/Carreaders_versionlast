@@ -168,7 +168,7 @@ export default function ReviewForm({ isOpen, onClose }: ReviewFormProps) {
                       <Star
                         className={`w-10 h-10 ${
                           star <= (hoveredRating || rating)
-                            ? 'fill-[#780000] text-[#780000]'
+                            ? 'fill-[#2563eb] text-[#2563eb]'
                             : 'text-gray-300'
                         }`}
                       />
@@ -193,8 +193,8 @@ export default function ReviewForm({ isOpen, onClose }: ReviewFormProps) {
               </div>
 
               {error && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-sm text-red-600">{error}</p>
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <p className="text-sm text-blue-600">{error}</p>
                 </div>
               )}
 

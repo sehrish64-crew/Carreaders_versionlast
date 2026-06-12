@@ -44,38 +44,38 @@ export default function VinChecker() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-20 px-4 bg-gradient-to-br from-[#780000]/10 via-white to-[#780000]/5 overflow-hidden"
+      className="relative py-16 md:py-20 px-4 bg-gradient-to-br from-blue-100 via-white to-sky-100 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
 
         <div
-          className={`relative bg-gradient-to-br from-[#780000] via-[#8a0000] to-[#5a0000] rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-1000 ${
+          className={`relative bg-gradient-to-br from-blue-400 via-blue-200 to-sky-500 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
 
           {/* Background glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#780000]/40 via-transparent to-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-sky-700/20"></div>
 
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#780000]/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl animate-pulse"></div>
 
           <div className="relative px-6 md:px-12 lg:px-16 py-12 md:py-16 grid lg:grid-cols-2 gap-8 items-center">
 
             {/* LEFT SIDE */}
             <div className="space-y-6 text-white">
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                 Car Readers Vehicle Intelligence
               </h2>
 
-              <p className="text-sm sm:text-base md:text-lg text-white/90">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90">
                 Instantly uncover accident history, mileage records, ownership changes, and hidden issues before buying any car.
               </p>
 
               <div className="flex items-center space-x-2 text-white/90">
                 <CheckCircle className="w-5 h-5" />
-                <span className="text-sm md:text-base">
+                <span className="text-xs sm:text-sm md:text-base">
                   Trusted by 4.5M+ users across 35+ countries
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function VinChecker() {
                     key={index}
                     className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
                   >
-                    <span className="text-white text-xs md:text-sm font-semibold">
+                    <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">
                       {logo.name}
                     </span>
                   </div>
@@ -96,7 +96,7 @@ export default function VinChecker() {
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="bg-white rounded-2xl shadow-2xl p-5">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-5">
 
               {/* Toggle */}
               <div className="flex items-center justify-between mb-4">
@@ -106,7 +106,7 @@ export default function VinChecker() {
                     onClick={() => setVehicleIdType('vin')}
                     className={`px-3 py-1 rounded-full text-sm font-medium transition ${
                       vehicleIdType === 'vin'
-                        ? 'bg-[#780000] text-white'
+                        ? 'bg-[#2563eb] text-white'
                         : 'text-black'
                     }`}
                   >
@@ -117,7 +117,7 @@ export default function VinChecker() {
                     onClick={() => setVehicleIdType('plate')}
                     className={`px-3 py-1 rounded-full text-sm font-medium transition ${
                       vehicleIdType === 'plate'
-                        ? 'bg-[#780000] text-white'
+                        ? 'bg-[#2563eb] text-white'
                         : 'text-black'
                     }`}
                   >
@@ -133,23 +133,23 @@ export default function VinChecker() {
                   placeholder="Enter VIN Number"
                   value={vin}
                   onChange={(e) => setVin(e.target.value.toUpperCase())}
-                  className="text-lg py-6"
+                  className="text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 placeholder:text-xs sm:placeholder:text-sm"
                 />
               ) : (
                 <Input
                   placeholder="Enter Plate Number"
                   value={plate}
                   onChange={(e) => setPlate(e.target.value.toUpperCase())}
-                  className="text-lg py-6"
+                  className="text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 placeholder:text-xs sm:placeholder:text-sm"
                 />
               )}
 
               {/* BUTTON */}
               <Button
                 onClick={() => setIsFormOpen(true)}
-                className="w-full mt-4 bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3"
+                className="w-full mt-4 bg-sky-700 hover:bg-sky-800 text-white font-bold py-3"
               >
-                Get Free Report
+                Get Report
               </Button>
 
               <p className="text-xs text-gray-500 mt-3 text-center">

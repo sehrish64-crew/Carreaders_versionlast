@@ -113,7 +113,7 @@ export default function VinLookup() {
 
       {/* Error Message */}
       {error && (
-        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+        <div className="mb-6 p-4 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
           ⚠️ {error}
         </div>
       )}
@@ -191,7 +191,7 @@ export default function VinLookup() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Accidents:</span>
-                  <span className={`font-semibold ${result.history.accidents === 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <span className={`font-semibold ${result.history.accidents === 0 ? 'text-green-600' : 'text-blue-600'}`}>
                     {result.history.accidents}
                   </span>
                 </div>
@@ -201,19 +201,19 @@ export default function VinLookup() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Flood Damage:</span>
-                  <span className={`font-semibold ${result.history.floodDamage ? 'text-red-600' : 'text-green-600'}`}>
+                  <span className={`font-semibold ${result.history.floodDamage ? 'text-blue-600' : 'text-green-600'}`}>
                     {result.history.floodDamage ? 'Yes' : 'No'}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Fire Damage:</span>
-                  <span className={`font-semibold ${result.history.fireDamage ? 'text-red-600' : 'text-green-600'}`}>
+                  <span className={`font-semibold ${result.history.fireDamage ? 'text-blue-600' : 'text-green-600'}`}>
                     {result.history.fireDamage ? 'Yes' : 'No'}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Recalls:</span>
-                  <span className={`font-semibold ${result.safety.recallCount === 0 ? 'text-green-600' : 'text-orange-600'}`}>
+                  <span className={`font-semibold ${result.safety.recallCount === 0 ? 'text-green-600' : 'text-blue-600'}`}>
                     {result.safety.recallCount}
                   </span>
                 </div>
@@ -227,8 +227,8 @@ export default function VinLookup() {
               <h3 className="font-bold text-lg text-gray-800 mb-4">Recalls</h3>
               <div className="space-y-2">
                 {result.safety.recalls.map((recall, idx) => (
-                  <div key={idx} className="p-3 bg-orange-50 border border-orange-200 rounded-lg">
-                    <p className="text-sm font-semibold text-orange-900">{recall.title || recall.description || `Recall ${idx + 1}`}</p>
+                  <div key={idx} className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-sm font-semibold text-blue-900">{recall.title || recall.description || `Recall ${idx + 1}`}</p>
                   </div>
                 ))}
               </div>

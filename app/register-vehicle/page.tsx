@@ -195,7 +195,7 @@ export default function RegisterVehiclePage() {
                   className="w-full h-10"
                   placeholder="John Doe"
                 />
-                {errors.ownerName && <p className="text-red-600 text-sm mt-1">{errors.ownerName}</p>}
+                {errors.ownerName && <p className="text-blue-600 text-sm mt-1">{errors.ownerName}</p>}
               </div>
               <div>
                 <Label htmlFor="ownerEmail" className="block text-sm font-medium text-gray-700 mb-2">
@@ -210,7 +210,7 @@ export default function RegisterVehiclePage() {
                   className="w-full h-10"
                   placeholder="john@example.com"
                 />
-                {errors.ownerEmail && <p className="text-red-600 text-sm mt-1">{errors.ownerEmail}</p>}
+                {errors.ownerEmail && <p className="text-blue-600 text-sm mt-1">{errors.ownerEmail}</p>}
               </div>
               <div>
                 <Label htmlFor="ownerPhone" className="block text-sm font-medium text-gray-700 mb-2">
@@ -225,7 +225,7 @@ export default function RegisterVehiclePage() {
                   className="w-full h-10"
                   placeholder="e.g., +1 555 555 5555"
                 />
-                {errors.ownerPhone && <p className="text-red-600 text-sm mt-1">{errors.ownerPhone}</p>}
+                {errors.ownerPhone && <p className="text-blue-600 text-sm mt-1">{errors.ownerPhone}</p>}
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@ export default function RegisterVehiclePage() {
                   className="w-full h-10"
                   placeholder="e.g., 2020 Honda Civic Sedan"
                 />
-                {errors.vehicleTitle && <p className="text-red-600 text-sm mt-1">{errors.vehicleTitle}</p>}
+                {errors.vehicleTitle && <p className="text-blue-600 text-sm mt-1">{errors.vehicleTitle}</p>}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -279,7 +279,7 @@ export default function RegisterVehiclePage() {
                     className="w-full h-10"
                     placeholder="Honda"
                   />
-                  {errors.vehicleMake && <p className="text-red-600 text-xs mt-1">{errors.vehicleMake}</p>}
+                  {errors.vehicleMake && <p className="text-blue-600 text-xs mt-1">{errors.vehicleMake}</p>}
                 </div>
                 <div>
                   <Label htmlFor="vehicleModel" className="block text-sm font-medium text-gray-700 mb-2">
@@ -294,7 +294,7 @@ export default function RegisterVehiclePage() {
                     className="w-full h-10"
                     placeholder="Civic"
                   />
-                  {errors.vehicleModel && <p className="text-red-600 text-xs mt-1">{errors.vehicleModel}</p>}
+                  {errors.vehicleModel && <p className="text-blue-600 text-xs mt-1">{errors.vehicleModel}</p>}
                 </div>
                 <div>
                   <Label htmlFor="vehicleType" className="block text-sm font-medium text-gray-700 mb-2">
@@ -380,7 +380,7 @@ export default function RegisterVehiclePage() {
                 step="0.01"
                 min="0"
               />
-              {errors.price && <p className="text-red-600 text-sm mt-1">{errors.price}</p>}
+              {errors.price && <p className="text-blue-600 text-sm mt-1">{errors.price}</p>}
             </div>
           </div>
 
@@ -404,7 +404,7 @@ export default function RegisterVehiclePage() {
                 <p className="text-xs text-gray-500">PNG, JPG, GIF up to 5MB each</p>
               </label>
             </div>
-            {errors.images && <p className="text-red-600 text-sm mt-2">{errors.images}</p>}
+            {errors.images && <p className="text-blue-600 text-sm mt-2">{errors.images}</p>}
 
             {/* Image Previews */}
             {imagePreviewUrls.length > 0 && (
@@ -423,7 +423,7 @@ export default function RegisterVehiclePage() {
                       <button
                         type="button"
                         onClick={() => removeImage(index)}
-                        className="absolute top-1 right-1 bg-red-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-1 right-1 bg-blue-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -436,8 +436,8 @@ export default function RegisterVehiclePage() {
 
           {/* Error Messages */}
           {errors.submit && (
-            <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-600 text-sm">{errors.submit}</p>
+            <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-blue-600 text-sm">{errors.submit}</p>
             </div>
           )}
 

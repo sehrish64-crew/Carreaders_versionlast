@@ -108,7 +108,7 @@ export default function AdminContactPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'new':
-        return <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-[#D0A0A0] text-[#580000] border border-[#D0A0A0]">New</span>
+        return <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-[#D0A0A0] text-[#1d4ed8] border border-[#D0A0A0]">New</span>
       case 'read':
         return <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">Read</span>
       case 'responded':
@@ -180,7 +180,7 @@ export default function AdminContactPage() {
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
                       <Button variant="outline" size="sm" onClick={() => setSelectedSubmission(it)}>View</Button>
-                      <Button variant="outline" size="sm" onClick={() => { if (confirm('Delete this message?')) handleDelete(it.id) }} className="text-red-600 border-red-200">Delete</Button>
+                      <Button variant="outline" size="sm" onClick={() => { if (confirm('Delete this message?')) handleDelete(it.id) }} className="text-blue-600 border-blue-200">Delete</Button>
                     </div>
                   </td>
                 </tr>

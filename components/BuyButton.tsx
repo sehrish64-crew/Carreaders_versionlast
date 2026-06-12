@@ -284,7 +284,7 @@ export default function BuyButton({
 
       {/* Error message display */}
       {error && (
-        <div className="mt-2 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+        <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded text-blue-700 text-sm">
           <p className="font-semibold">Checkout Error</p>
           <p className="text-xs mt-1">{error}</p>
           <p className="text-xs mt-2 opacity-75">

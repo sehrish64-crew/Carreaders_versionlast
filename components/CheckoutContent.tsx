@@ -60,7 +60,7 @@ export default function CheckoutContent() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-red-700"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-700"></div>
           <p className="mt-4 text-gray-600">Loading payment information...</p>
         </div>
       </div>
@@ -72,13 +72,13 @@ export default function CheckoutContent() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4">
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
           <div className="flex items-start gap-4">
-            <AlertCircle className="text-red-600 flex-shrink-0 mt-1" size={24} />
+            <AlertCircle className="text-blue-600 flex-shrink-0 mt-1" size={24} />
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">Error</h2>
               <p className="text-gray-600 mb-6">{error || 'Payment information is missing'}</p>
               <Button
                 asChild
-                className="w-full bg-red-700 hover:bg-red-800"
+                className="w-full bg-blue-700 hover:bg-blue-800"
               >
                 <Link href="/">Go Back to Home</Link>
               </Button>
@@ -96,7 +96,7 @@ export default function CheckoutContent() {
         <div className="max-w-4xl mx-auto px-3 sm:px-6 py-3 sm:py-6">
           <button
             onClick={() => router.back()}
-            className="flex items-center gap-2 text-red-700 hover:text-red-800 font-medium mb-2 sm:mb-4"
+            className="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium mb-2 sm:mb-4"
           >
             <ArrowLeft size={16} className="sm:size-5" />
             <span className="text-xs sm:text-base">Back to Form</span>
@@ -145,7 +145,7 @@ export default function CheckoutContent() {
             <div className="py-2 sm:py-4">
               <div className="flex justify-between items-center gap-2">
                 <span className="text-sm sm:text-lg font-bold text-gray-900">Total Amount</span>
-                <span className="text-lg sm:text-2xl font-bold text-red-700">
+                <span className="text-lg sm:text-2xl font-bold text-blue-700">
                   {formatCurrency(formData.amount, formData.currency)}
                 </span>
               </div>
@@ -207,7 +207,7 @@ export default function CheckoutContent() {
             <div className="py-3 sm:py-4">
               <div className="flex justify-between items-center gap-2">
                 <span className="text-base sm:text-lg font-bold text-gray-900">Total Amount</span>
-                <span className="text-xl sm:text-2xl font-bold text-red-700 text-right">
+                <span className="text-xl sm:text-2xl font-bold text-blue-700 text-right">
                   {formatCurrency(formData.amount, formData.currency)}
                 </span>
               </div>

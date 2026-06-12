@@ -26,6 +26,26 @@ const packages = [
   { id: 'basic', name: 'Basic Report' },
 ]
 
+const formatPhoneNumber = (value: string) => {
+  const digits = value.replace(/\D/g, '')
+
+  if (!digits) return ''
+
+  let normalized = digits
+  if (normalized.startsWith('0')) {
+    normalized = `44${normalized.slice(1)}`
+  } else if (!normalized.startsWith('44')) {
+    normalized = `44${normalized}`
+  }
+
+  normalized = normalized.slice(0, 13)
+
+  if (normalized.length <= 2) return `+${normalized}`
+  if (normalized.length <= 6) return `+${normalized.slice(0, 2)} ${normalized.slice(2)}`
+
+  return `+${normalized.slice(0, 2)} ${normalized.slice(2, 6)} ${normalized.slice(6)}`.trim()
+}
+
 export default function GetReportForm({ isOpen, onClose, preselectedPackage, prefilledIdentType, prefilledIdentValue }: GetReportFormProps) {
   const { selectedCountry, setSelectedCountry } = useCountry()
 
@@ -36,11 +56,11 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
     const style = document.createElement('style')
     style.textContent = `
       [role="option"]:hover {
-        background-color: #780000 !important;
+        background-color: #2563eb !important;
         color: white !important;
       }
       [role="option"][data-state="checked"] {
-        background-color: #780000 !important;
+        background-color: #2563eb !important;
         color: white !important;
       }
     `
@@ -54,12 +74,42 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
   const [vehicleType, setVehicleType] = useState('')
   const [vinNumber, setVinNumber] = useState('')
   const [plateNumber, setPlateNumber] = useState('')
+  const [customerName, setCustomerName] = useState('')
+  const [customerPhone, setCustomerPhone] = useState('')
   const [customerEmail, setCustomerEmail] = useState('')
   const [selectedPackage, setSelectedPackage] = useState(preselectedPackage || 'basic')
   const [selectedCountryCode, setSelectedCountryCode] = useState(selectedCountry?.code || 'US')
   const [countryFilter, setCountryFilter] = useState('')
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    if (prefilledIdentType === 'vin') {
+      setVehicleIdType('vin')
+      setVinNumber((prefilledIdentValue || '').toUpperCase())
+      setPlateNumber('')
+      return
+    }
+
+    if (prefilledIdentType === 'plate') {
+      setVehicleIdType('plate')
+      setPlateNumber((prefilledIdentValue || '').toUpperCase())
+      setVinNumber('')
+      return
+    }
+
+    setVehicleIdType('vin')
+    setVinNumber('')
+    setPlateNumber('')
+  }, [isOpen, prefilledIdentType, prefilledIdentValue])
+
+  useEffect(() => {
+    if (preselectedPackage) {
+      setSelectedPackage(preselectedPackage)
+    }
+  }, [preselectedPackage])
 
   const SHOPIFY_URL = 'http://pdf-tech-2.myshopify.com/products/digital-pdf'
 
@@ -68,6 +118,8 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
     if (!vehicleType) return setError('Select vehicle type'), false
     if (vehicleIdType === 'vin' && !vinNumber) return setError('Enter VIN'), false
     if (vehicleIdType === 'plate' && !plateNumber) return setError('Enter plate number'), false
+    if (!customerName.trim()) return setError('Enter your full name'), false
+    if (!customerPhone.trim()) return setError('Enter your phone number'), false
     if (!customerEmail) return setError('Enter email'), false
     if (!selectedPackage) return setError('Select a package'), false
     return true
@@ -83,6 +135,8 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       const formData = {
         packageId: selectedPackage,
         currency: selectedCountry.currency,
+        customerName: customerName.trim(),
+        customerPhone: customerPhone.trim(),
         customerEmail,
         vehicleIdentifier: vehicleIdType === 'vin' ? vinNumber : plateNumber,
         vehicleType,
@@ -126,6 +180,8 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       const formData = {
         packageId: selectedPackage,
         currency: selectedCountry.currency,
+        customerName: customerName.trim(),
+        customerPhone: customerPhone.trim(),
         customerEmail,
         vehicleIdentifier: vehicleIdType === 'vin' ? vinNumber : plateNumber,
         vehicleType,
@@ -163,14 +219,14 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       />
       
       {/* Modal Container */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-[9999] rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden border border-[#780000]/20 flex flex-col">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-[9999] rounded-3xl shadow-2xl w-[calc(100vw-1rem)] max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden border border-[#2563eb]/20 flex flex-col">
         {/* Header with gradient background */}
-        <div className="bg-gradient-to-r from-[#780000] via-[#a52a2a] to-[#780000] border-b border-[#780000]/30 px-8 py-6 flex items-center justify-between flex-shrink-0 relative z-10">
+        <div className="bg-gradient-to-r from-[#2563eb] via-[#0284c7] to-[#2563eb] border-b border-[#2563eb]/30 px-4 py-4 sm:px-8 sm:py-6 flex items-center justify-between flex-shrink-0 relative z-10">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl font-bold text-white">
               Get Vehicle Report
             </h2>
-            <p className="text-xs text-white/80 mt-1">Quick and easy vehicle information</p>
+            <p className="text-[11px] sm:text-xs text-white/80 mt-1">Quick and easy vehicle information</p>
           </div>
           <button
             onClick={onClose}
@@ -182,21 +238,21 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
         </div>
 
         {/* Content */}
-        <div className="p-8 overflow-y-auto flex-1">
-          <form onSubmit={handleSubmit} className="space-y-7">
+        <div className="p-4 sm:p-8 overflow-y-auto flex-1">
+          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-7">
             {/* Search Type Selection */}
-            <div className="bg-gradient-to-br from-[#780000]/5 to-[#a52a2a]/5 p-4 rounded-xl border border-[#780000]/30">
+            <div className="bg-gradient-to-br from-[#2563eb]/5 to-[#0284c7]/5 p-4 rounded-xl border border-[#2563eb]/30">
               <Label className="block text-sm font-semibold text-foreground mb-3">
                 Search By
               </Label>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   type="button"
                   onClick={() => setVehicleIdType('vin')}
-                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 ${
                     vehicleIdType === 'vin'
-                      ? 'bg-gradient-to-r from-[#780000] to-[#5c0000] text-white shadow-lg shadow-[#780000]/40 scale-105'
-                      : 'bg-white border-2 border-[#780000]/30 text-foreground hover:border-[#780000]/60 hover:bg-[#780000]/5'
+                      ? 'bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white shadow-lg shadow-[#2563eb]/40 scale-105'
+                      : 'bg-white border-2 border-[#2563eb]/30 text-foreground hover:border-[#2563eb]/60 hover:bg-[#2563eb]/5'
                   }`}
                 >
                   <Key className="w-5 h-5" />
@@ -205,10 +261,10 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 <button
                   type="button"
                   onClick={() => setVehicleIdType('plate')}
-                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 ${
                     vehicleIdType === 'plate'
-                      ? 'bg-gradient-to-r from-[#780000] to-[#5c0000] text-white shadow-lg shadow-[#780000]/40 scale-105'
-                      : 'bg-white border-2 border-[#780000]/30 text-foreground hover:border-[#780000]/60 hover:bg-[#780000]/5'
+                      ? 'bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white shadow-lg shadow-[#2563eb]/40 scale-105'
+                      : 'bg-white border-2 border-[#2563eb]/30 text-foreground hover:border-[#2563eb]/60 hover:bg-[#2563eb]/5'
                   }`}
                 >
                   <Hash className="w-5 h-5" />
@@ -231,12 +287,12 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                     onChange={(e) => setVinNumber(e.target.value.toUpperCase())}
                     placeholder="Enter VIN number"
                     required
-                    className="h-12 pr-10 border-2 border-[#780000]/30 focus:border-[#780000] focus:ring-2 focus:ring-[#780000]/20 bg-white transition-colors"
+                    className="h-12 pr-10 border-2 border-[#2563eb]/30 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 bg-white transition-colors"
                     maxLength={17}
                   />
                   <button
                     type="button"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-[#780000] transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-[#2563eb] transition-colors"
                     title="VIN (Vehicle Identification Number) is a unique 17-character code"
                   >
                     <HelpCircle className="w-5 h-5" />
@@ -258,7 +314,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                   onChange={(e) => setPlateNumber(e.target.value.toUpperCase())}
                   placeholder="Enter Plate Number"
                   required
-                  className="h-12 border-2 border-[#780000]/30 focus:border-[#780000] focus:ring-2 focus:ring-[#780000]/20 bg-white transition-colors"
+                  className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 bg-white transition-colors"
                 />
                 <p className="text-xs text-muted-foreground">
                   Enter your vehicle&apos;s license plate number
@@ -272,7 +328,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 Vehicle Type
               </Label>
               <Select value={vehicleType} onValueChange={setVehicleType}>
-                <SelectTrigger className="h-12 border-2 border-[#780000]/30 focus:border-[#780000] bg-white">
+                <SelectTrigger className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] bg-white">
                   <SelectValue placeholder="Select vehicle type" />
                 </SelectTrigger>
                 <SelectContent className="z-[10000]">
@@ -283,6 +339,39 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                   ))}
                 </SelectContent>
               </Select>
+            </div>
+
+            {/* Full Name */}
+            <div className="space-y-2">
+              <Label htmlFor="customerName" className="block text-sm font-semibold text-foreground">
+                Full Name
+              </Label>
+              <Input
+                id="customerName"
+                type="text"
+                value={customerName}
+                onChange={(e) => setCustomerName(e.target.value)}
+                placeholder="Enter your full name"
+                required
+                className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 bg-white transition-colors"
+              />
+            </div>
+
+            {/* Phone Number */}
+            <div className="space-y-2">
+              <Label htmlFor="customerPhone" className="block text-sm font-semibold text-foreground">
+                Phone Number
+              </Label>
+              <Input
+                id="customerPhone"
+                type="tel"
+                value={customerPhone}
+                onChange={(e) => setCustomerPhone(formatPhoneNumber(e.target.value))}
+                placeholder="e.g. 07700 900123"
+                required
+                className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 bg-white transition-colors text-sm sm:text-base"
+              />
+              <p className="text-[11px] sm:text-xs text-muted-foreground">UK-style format will be applied automatically.</p>
             </div>
 
             {/* Email */}
@@ -297,7 +386,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 onChange={(e) => setCustomerEmail(e.target.value)}
                 placeholder="your.email@example.com"
                 required
-                className="h-12 border-2 border-[#780000]/30 focus:border-[#780000] focus:ring-2 focus:ring-[#780000]/20 bg-white transition-colors"
+                className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 bg-white transition-colors"
               />
               <p className="text-xs text-muted-foreground">
                 We'll send the report to this email address
@@ -315,7 +404,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                   if (found) setSelectedCountry(found)
                 }}
               >
-                <SelectTrigger className="h-12 border-2 border-[#780000]/30 focus:border-[#780000] bg-white">
+                <SelectTrigger className="h-12 border-2 border-[#2563eb]/30 focus:border-[#2563eb] bg-white">
                   <SelectValue placeholder="Select country" />
                 </SelectTrigger>
                 <SelectContent className="z-[10000] max-h-60 overflow-auto">
@@ -355,11 +444,11 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                     onClick={() => setSelectedPackage(pkg.id)}
                     className={`p-4 rounded-xl border-2 transition-all duration-200 text-center group ${
                       selectedPackage === pkg.id
-                        ? 'bg-gradient-to-br from-[#780000]/15 to-[#a52a2a]/10 border-[#780000] shadow-lg shadow-[#780000]/20'
-                        : 'bg-white border-[#780000]/30 hover:border-[#780000]/60 hover:bg-[#780000]/5 hover:shadow-md'
+                        ? 'bg-gradient-to-br from-[#2563eb]/15 to-[#0284c7]/10 border-[#2563eb] shadow-lg shadow-[#2563eb]/20'
+                        : 'bg-white border-[#2563eb]/30 hover:border-[#2563eb]/60 hover:bg-[#2563eb]/5 hover:shadow-md'
                     }`}
                   >
-                    <div className="font-bold text-sm text-foreground group-hover:text-[#780000] transition-colors">
+                    <div className="font-bold text-sm text-foreground group-hover:text-[#2563eb] transition-colors">
                       {pkg.name}
                     </div>
                     <div className="text-xs text-muted-foreground mt-2 font-semibold">
@@ -375,18 +464,18 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
 
             {/* Error Message */}
             {error && (
-              <div className="p-4 bg-red-50 border-2 border-red-300 rounded-xl animate-in fade-in">
-                <p className="text-sm font-medium text-red-700">{error}</p>
+              <div className="p-4 bg-blue-50 border-2 border-blue-300 rounded-xl animate-in fade-in">
+                <p className="text-sm font-medium text-blue-700">{error}</p>
               </div>
             )}
 
             {/* Action Buttons */}
-            <div className="flex gap-3 pt-4 border-t border-[#780000]/20">
+            <div className="flex flex-col-reverse gap-3 pt-4 border-t border-[#2563eb]/20 sm:flex-row sm:flex-row-reverse">
               <Button
                 type="button"
                 variant="outline"
                 onClick={onClose}
-                className="flex-1 h-12 rounded-lg font-semibold border-2 border-[#780000]/30 text-foreground hover:bg-[#780000]/5 hover:border-[#780000]/60"
+                className="flex-1 h-12 rounded-xl text-sm sm:text-base font-semibold border-2 border-[#2563eb]/30 text-foreground hover:bg-[#2563eb]/8 hover:border-[#2563eb]/70 hover:text-[#2563eb] transition-all duration-200 px-4 py-3"
                 disabled={isSubmitting}
               >
                 Cancel
@@ -394,7 +483,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
               <Button
                 type="button"
                 onClick={handleContinue}
-                className="flex-1 h-12 rounded-lg font-semibold bg-gradient-to-r from-[#780000] to-[#5c0000] hover:from-[#5c0000] hover:to-[#480000] text-white shadow-lg shadow-[#780000]/40 disabled:opacity-60 transition-all"
+                className="flex-1 h-12 rounded-xl text-sm sm:text-base font-semibold bg-gradient-to-r from-[#2563eb] to-[#1e40af] hover:from-[#1e40af] hover:to-[#2563eb] text-white shadow-lg shadow-[#2563eb]/40 disabled:opacity-60 transition-all duration-200 px-4 py-3"
                 disabled={isSubmitting}
               >
                 {isSubmitting

@@ -16,9 +16,9 @@ const getPaymentStatusBadge = (status: string) => {
     case 'completed':
       return <Badge className="bg-green-100 text-green-800 hover:bg-green-100">Paid</Badge>
     case 'pending':
-      return <Badge className="bg-[#D0A0A0] text-[#580000] hover:bg-[#D0A0A0]">Pending</Badge>
+      return <Badge className="bg-[#D0A0A0] text-[#1d4ed8] hover:bg-[#D0A0A0]">Pending</Badge>
     case 'failed':
-      return <Badge className="bg-red-100 text-red-800 hover:bg-red-100">Failed</Badge>
+      return <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Failed</Badge>
     default:
       return <Badge>{status}</Badge>
   }
@@ -31,9 +31,9 @@ const getReportStatusBadge = (status: string) => {
     case 'processing':
       return <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Processing</Badge>
     case 'pending':
-      return <Badge className="bg-[#D0A0A0] text-[#580000] hover:bg-[#D0A0A0]">Pending</Badge>
+      return <Badge className="bg-[#D0A0A0] text-[#1d4ed8] hover:bg-[#D0A0A0]">Pending</Badge>
     case 'failed':
-      return <Badge className="bg-red-100 text-red-800 hover:bg-red-100">Failed</Badge>
+      return <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Failed</Badge>
     default:
       return <Badge>{status}</Badge>
   }
@@ -83,9 +83,9 @@ function OrderCard({ order, onStatusChange, onDelete, onView, onEdit }: {
       case 'processing':
         return 'bg-blue-100 text-blue-800 border-blue-200'
       case 'pending':
-        return 'bg-[#D0A0A0] text-[#580000] border-[#D0A0A0]'
+        return 'bg-[#D0A0A0] text-[#1d4ed8] border-[#D0A0A0]'
       case 'cancelled':
-        return 'bg-red-100 text-red-800 border-red-200'
+        return 'bg-blue-100 text-blue-800 border-blue-200'
       case 'refunded':
         return 'bg-gray-100 text-gray-800 border-gray-200'
       default:
@@ -195,9 +195,9 @@ function OrderTableRow({ order, onStatusChange, onDelete, onView, onEdit }: {
       case 'processing':
         return 'bg-blue-100 text-blue-800 border-blue-200'
       case 'pending':
-        return 'bg-[#D0A0A0] text-[#580000] border-[#D0A0A0]'
+        return 'bg-[#D0A0A0] text-[#1d4ed8] border-[#D0A0A0]'
       case 'cancelled':
-        return 'bg-red-100 text-red-800 border-red-200'
+        return 'bg-blue-100 text-blue-800 border-blue-200'
       case 'refunded':
         return 'bg-gray-100 text-gray-800 border-gray-200'
       default:

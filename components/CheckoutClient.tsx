@@ -68,7 +68,7 @@ export default function CheckoutClient({ order }: { order: any }) {
           <div className="text-lg font-bold">{order.package_type}</div>
           <div className="text-sm text-muted-foreground">{order.currency} {order.amount}</div>
         </div>
-        <div className="text-red-600">No Paddle price ID configured for {order.package_type}</div>
+        <div className="text-blue-600">No Paddle price ID configured for {order.package_type}</div>
       </div>
     );
   }
@@ -112,7 +112,7 @@ export default function CheckoutClient({ order }: { order: any }) {
 
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
             <div className="md:col-span-2">
-              {error && <div className="text-red-600 mb-3">{error}</div>}
+              {error && <div className="text-blue-600 mb-3">{error}</div>}
 
               <div className="flex items-baseline gap-3">
                 <div className="text-sm text-muted-foreground">Amount</div>

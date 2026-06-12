@@ -76,22 +76,22 @@ export default function AboutUsClient() {
     <div className="bg-white">
 
       {/* HERO */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#780000]/10 via-white to-gray-50">
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#2563eb]/10 via-white to-gray-50">
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#78000015,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#2563eb15,transparent_60%)]" />
 
         <div className="container mx-auto px-4 py-20 text-center max-w-4xl">
 
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#780000]/10 text-[#780000] font-semibold border border-[#780000]/20">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#2563eb]/10 text-[#2563eb] font-semibold border border-[#2563eb]/20">
             <Shield size={16} /> About Car Readers
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
-            Driving <span className="text-[#780000]">Trust</span> Through Vehicle Data
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+            Driving <span className="text-[#2563eb]">Trust</span> Through Vehicle Data
           </h1>
 
-          <p className="text-gray-600 mt-5 text-lg">
-              Car Readers is a digital vehicle history platform built to help people make safer,
+          <p className="text-gray-600 mt-5 text-sm sm:text-base md:text-lg">
+            Car Readers is a digital vehicle history platform built to help people make safer,
             smarter, and more transparent car buying decisions.
           </p>
 
@@ -105,17 +105,17 @@ export default function AboutUsClient() {
           {stats.map((s, i) => (
             <div
               key={i}
-              className="group bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-[#780000]/30 transition-all"
+              className="group bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-[#2563eb]/30 transition-all"
             >
-              <div className="w-12 h-12 mx-auto rounded-xl bg-[#780000]/10 flex items-center justify-center group-hover:scale-110 transition">
-                <s.icon className="text-[#780000]" />
+              <div className="w-12 h-12 mx-auto rounded-xl bg-[#2563eb]/10 flex items-center justify-center group-hover:scale-110 transition">
+                <s.icon className="text-[#2563eb]" />
               </div>
 
-              <h2 className="text-3xl font-bold mt-3 text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold mt-3 text-gray-900">
                 {counters[i]}{s.suffix}
               </h2>
 
-              <p className="text-sm text-gray-600 mt-1">{s.label}</p>
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">{s.label}</p>
             </div>
           ))}
         </div>
@@ -127,33 +127,33 @@ export default function AboutUsClient() {
 
           <div className="space-y-5">
 
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Why We Built <span className="text-[#780000]">Car Readers</span>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
+              Why We Built <span className="text-[#2563eb]">Car Readers</span>
             </h2>
 
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Buying a used car can be risky. Hidden accidents, mileage fraud, and incomplete history
               often lead to financial loss. We created Car Readers to solve this problem.
             </p>
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm sm:text-base">
               Our platform gives you instant access to verified vehicle history reports so you can
               avoid scams and make confident decisions before buying any vehicle.
             </p>
 
             <div className="flex gap-4 pt-2">
               <div className="flex items-center gap-2 text-gray-700">
-                <Award className="text-[#780000]" /> Trusted Reports
+                <Award className="text-[#2563eb]" /> Trusted Reports
               </div>
               <div className="flex items-center gap-2 text-gray-700">
-                <Heart className="text-[#780000]" /> User Focused
+                <Heart className="text-[#2563eb]" /> User Focused
               </div>
             </div>
 
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-[#780000]/10 rounded-3xl blur-2xl"></div>
+            <div className="absolute -inset-4 bg-[#2563eb]/10 rounded-3xl blur-2xl"></div>
 
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border">
               <Image
@@ -181,10 +181,10 @@ export default function AboutUsClient() {
       <div className="container mx-auto px-4 py-20">
 
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">
-            Our <span className="text-[#780000]">Core Values</span>
+          <h2 className="text-2xl sm:text-4xl font-bold">
+            Our <span className="text-[#2563eb]">Core Values</span>
           </h2>
-          <p className="text-gray-600 mt-3">
+          <p className="text-gray-600 mt-3 text-sm sm:text-base">
             The principles that define how we build trust and deliver value
           </p>
         </div>
@@ -194,14 +194,14 @@ export default function AboutUsClient() {
           {values.map((v, i) => (
             <div
               key={i}
-              className="p-6 rounded-2xl border bg-white hover:shadow-xl hover:border-[#780000]/30 transition"
+              className="p-6 rounded-2xl border bg-white hover:shadow-xl hover:border-[#2563eb]/30 transition"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#780000]/10 flex items-center justify-center mb-4">
-                <v.icon className="text-[#780000]" />
+              <div className="w-12 h-12 rounded-xl bg-[#2563eb]/10 flex items-center justify-center mb-4">
+                <v.icon className="text-[#2563eb]" />
               </div>
 
-              <h3 className="text-xl font-bold">{v.title}</h3>
-              <p className="text-gray-600 mt-2">{v.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold">{v.title}</h3>
+              <p className="text-gray-600 mt-2 text-sm sm:text-base">{v.description}</p>
             </div>
           ))}
 
@@ -209,17 +209,17 @@ export default function AboutUsClient() {
       </div>
 
       {/* CTA */}
-      <div className="bg-gradient-to-r from-[#780000] to-black py-16 text-center text-white">
+      <div className="bg-gradient-to-r from-[#2563eb] to-slate-900 py-16 text-center text-white">
 
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
           Start Your Vehicle Check Today
         </h2>
 
-        <p className="text-white/80 mt-3">
+        <p className="text-white/80 mt-3 text-sm sm:text-base">
           Get instant reports and protect yourself from risky car purchases
         </p>
 
-        <button className="mt-6 bg-white text-[#780000] hover:bg-gray-200 font-bold px-8 py-3 rounded-xl">
+        <button className="mt-6 bg-white text-[#2563eb] hover:bg-gray-200 font-bold px-8 py-3 rounded-xl">
           Get Report Now
         </button>
 

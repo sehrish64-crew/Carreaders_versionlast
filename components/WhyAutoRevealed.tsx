@@ -2,9 +2,7 @@
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 
 import SwiperCore from "swiper";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -26,8 +24,8 @@ export default function WhyCarReaders() {
   }, [])
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-red-50 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-14 sm:py-16 md:py-24 bg-gradient-to-b from-blue-50 via-white to-sky-50 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
         <div className="text-center max-w-4xl mx-auto mb-16">
@@ -40,7 +38,7 @@ export default function WhyCarReaders() {
         </div>
 
         {/* HERO IMAGE */}
-        <div className="relative h-80 sm:h-96 md:h-[500px] rounded-3xl overflow-hidden mb-16 shadow-2xl">
+        <div className="relative h-72 sm:h-80 md:h-[500px] rounded-3xl overflow-hidden mb-10 sm:mb-16 shadow-2xl">
           <Image
             src="/cars.webp"
             alt={t('why_title')}
@@ -49,33 +47,33 @@ export default function WhyCarReaders() {
             priority
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-[#780000]/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-[#2563eb]/40"></div>
 
           {/* CONTENT */}
           <div className={`absolute inset-0 flex items-center justify-start transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="px-6 md:px-12 max-w-lg space-y-6">
+            <div className="px-4 sm:px-6 md:px-12 max-w-lg space-y-4 sm:space-y-6">
 
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-white">
+                <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
                   Starting from
                 </div>
-                <div className="text-4xl md:text-6xl font-bold text-[#780000] drop-shadow-lg">
+                <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-blue-400 drop-shadow-lg">
                   $40
                 </div>
               </div>
 
               <div>
-                <p className="text-white text-lg font-semibold">
+                <p className="text-white text-base sm:text-lg font-semibold">
                   for a vehicle history report
                 </p>
-                <p className="text-white/80 text-sm md:text-base">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Verify VIN and avoid risky car purchases before you buy.
                 </p>
               </div>
 
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="px-6 py-3 bg-gradient-to-r from-[#780000] to-red-700 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
+                className="px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-400 to-sky-600 text-slate-900 font-bold rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
                 Check VIN Now
               </button>
@@ -92,7 +90,7 @@ export default function WhyCarReaders() {
               title: "Verification Method",
               value: "By VIN & Plate",
               icon: "✓",
-              color: "#780000"
+              color: "#2563eb"
             },
             {
               title: "Daily Searches",
@@ -110,10 +108,10 @@ export default function WhyCarReaders() {
               title: "Report Scope",
               value: "Complete History",
               icon: "◆",
-              color: "#780000"
+              color: "#2563eb"
             }
           ].map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-all border border-red-100">
+            <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-all border border-blue-100">
 
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold mb-4"
@@ -129,18 +127,36 @@ export default function WhyCarReaders() {
 
         </div>
 
+        {/* MOBILE CARDS */}
+        <div className="grid grid-cols-2 gap-3 md:hidden mb-10">
+          {[
+            { title: "VIN & Plate", value: "Verified", icon: "✓" },
+            { title: "Daily Searches", value: "45K+", icon: "↗" },
+            { title: "Data Sources", value: "70+", icon: "⊕" },
+            { title: "Report Scope", value: "Complete", icon: "◆" },
+          ].map((item, i) => (
+            <div key={i} className="rounded-2xl border border-blue-100 bg-white p-4 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-bold mb-3">
+                {item.icon}
+              </div>
+              <p className="text-[11px] uppercase tracking-wide text-gray-500">{item.title}</p>
+              <p className="text-base font-bold text-gray-900 mt-1">{item.value}</p>
+            </div>
+          ))}
+        </div>
+
         {/* TRUST SECTION */}
-        <div className="mt-20 rounded-3xl overflow-hidden relative">
+        <div className="mt-12 sm:mt-16 md:mt-20 rounded-3xl overflow-hidden relative">
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#780000] via-red-800 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-blue-800 to-slate-900"></div>
 
-          <div className="relative p-10 md:p-16 text-white grid md:grid-cols-2 gap-10">
+          <div className="relative p-6 sm:p-10 md:p-16 text-white grid md:grid-cols-2 gap-6 md:gap-10">
 
             <div>
-              <h3 className="text-3xl font-bold mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
                 1,000,000+ Trusted Users
               </h3>
-              <p className="text-white/80">
+              <p className="text-white/80 text-sm sm:text-base">
                 Across 150+ countries using secure VIN reports.
               </p>
             </div>

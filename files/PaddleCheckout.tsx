@@ -116,7 +116,7 @@ export default function PaddleCheckout() {
   return (
     <div>
       <h2 className="text-lg font-semibold mb-3">Paddle Sandbox Checkout</h2>
-      {error && <div className="text-red-600 mb-3">{error}</div>}
+      {error && <div className="text-blue-600 mb-3">{error}</div>}
       <div className="flex gap-3">
         {PRODUCTS.map((p) => (
           <button

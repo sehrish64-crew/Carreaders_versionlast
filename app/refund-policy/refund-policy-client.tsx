@@ -31,7 +31,7 @@ export default function RefundPolicyPageClient() {
             </ul>
           </section>
 
-          {/* <section className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+          {/* <section className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
             <h2 className="text-xl font-semibold text-gray-900">Important Notice for Digital Content</h2>
             <p className="mt-3 font-semibold text-gray-900">WHERE A PRODUCT IS DIGITAL CONTENT AND IS MADE AVAILABLE IMMEDIATELY, BY DOWNLOADING OR ACCESSING THE PRODUCT, YOU EXPRESSLY CONSENT TO IMMEDIATE PERFORMANCE OF THIS AGREEMENT AND ACKNOWLEDGE THAT YOU WILL LOSE YOUR RIGHT OF WITHDRAWAL ONCE ACCESS OR DOWNLOAD HAS BEGUN.</p>
           </section> */}

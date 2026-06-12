@@ -11,7 +11,7 @@ import countriesList from '@/lib/countries'
 import { Input as TextInput } from '@/components/ui/input'
 import { useTranslations } from '@/lib/translations'
 import { parseJsonSafe } from '@/lib/utils'
-import { getPrice, formatCurrency, getExternalPriceId } from '@/lib/prices'
+import { getPrice, formatCurrency } from '@/lib/prices'
 
 interface GetReportFormProps {
   isOpen: boolean
@@ -35,9 +35,33 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
   const [vehicleType, setVehicleType] = useState('')
   const [vinNumber, setVinNumber] = useState('')
   const [plateNumber, setPlateNumber] = useState('')
+  const [customerName, setCustomerName] = useState('')
+  const [customerPhone, setCustomerPhone] = useState('')
   const [customerEmail, setCustomerEmail] = useState('')
   const [selectedPackage, setSelectedPackage] = useState(preselectedPackage || 'basic')
   const [selectedCountryCode, setSelectedCountryCode] = useState<string>(selectedCountry?.code || 'US')
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    if (prefilledIdentType === 'vin') {
+      setVehicleIdType('vin')
+      setVinNumber((prefilledIdentValue || '').toUpperCase())
+      setPlateNumber('')
+      return
+    }
+
+    if (prefilledIdentType === 'plate') {
+      setVehicleIdType('plate')
+      setPlateNumber((prefilledIdentValue || '').toUpperCase())
+      setVinNumber('')
+      return
+    }
+
+    setVehicleIdType('vin')
+    setVinNumber('')
+    setPlateNumber('')
+  }, [isOpen, prefilledIdentType, prefilledIdentValue])
   // search filter for country dropdown
   const [countryFilter, setCountryFilter] = useState<string>('')
   const [error, setError] = useState('')
@@ -93,6 +117,16 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       return false
     }
 
+    if (!customerName.trim()) {
+      setError('Please enter your full name')
+      return false
+    }
+
+    if (!customerPhone.trim()) {
+      setError('Please enter your phone number')
+      return false
+    }
+
     if (!customerEmail) {
       setError('Please enter your email address')
       return false
@@ -136,8 +170,6 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
           country_code: selectedCountryCode || selectedCountry.code,
           currency: selectedCountry.currency,
           amount: packageData ? getPrice(packageData.id as any, selectedCountry.currency) : 19.99,
-          // If an external price id exists (e.g. Stripe price), include it so it can be recorded with the order.
-          paymentProvider: packageData ? (getExternalPriceId(packageData.id as any) ? `stripe:${getExternalPriceId(packageData.id as any)}` : undefined) : undefined,
         }),
       })
 
@@ -195,6 +227,8 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       const formData = {
         packageId: selectedPackage,
         currency: selectedCountry.currency,
+        customerName: customerName.trim(),
+        customerPhone: customerPhone.trim(),
         customerEmail,
         vehicleIdentifier: vehicleIdType === 'vin' ? vinNumber : plateNumber,
         vehicleType,
@@ -289,10 +323,11 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
         onClick={onClose}
       />
 
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-[9999] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-        <div className="p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">{t('form_title')}</h2>
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
+        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[98vw] sm:max-w-2xl md:max-w-3xl max-h-[95vh] overflow-y-auto">
+          <div className="p-3 sm:p-6 md:p-8">
+          <div className="flex items-start justify-between gap-3 mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-tight">{t('form_title')}</h2>
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -301,20 +336,20 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
               <Label className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2">
                 Search By
               </Label>
               <div className="mb-2">
-                <div className="inline-flex items-center bg-gray-100 rounded-full p-1 gap-1">
-                  <button type="button" onClick={() => setVehicleIdType('vin')} className={`flex items-center gap-2 px-3 py-1 rounded-full transition-all ${vehicleIdType === 'vin' ? 'bg-[#780000] text-white shadow' : 'text-black hover:bg-gray-200'}`}>
-                    <Key className="w-4 h-4" />
-                    <span className="text-sm font-medium">By VIN</span>
+                <div className="grid grid-cols-2 gap-2 rounded-2xl bg-gray-100 p-1 w-full sm:inline-flex sm:w-auto sm:gap-1 sm:rounded-full">
+                  <button type="button" onClick={() => setVehicleIdType('vin')} className={`flex items-center justify-center gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2 rounded-xl sm:rounded-full transition-all ${vehicleIdType === 'vin' ? 'bg-[#2563eb] text-white shadow' : 'text-black hover:bg-gray-200'}`}>
+                    <Key className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="text-xs sm:text-sm font-medium">By VIN</span>
                   </button>
-                  <button type="button" onClick={() => setVehicleIdType('plate')} className={`flex items-center gap-2 px-3 py-1 rounded-full transition-all ${vehicleIdType === 'plate' ? 'bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow' : 'text-black hover:bg-gray-200'}`}>
-                    <Hash className="w-4 h-4" />
-                    <span className="text-sm font-medium">By Plate</span>
+                  <button type="button" onClick={() => setVehicleIdType('plate')} className={`flex items-center justify-center gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2 rounded-xl sm:rounded-full transition-all ${vehicleIdType === 'plate' ? 'bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow' : 'text-black hover:bg-gray-200'}`}>
+                    <Hash className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="text-xs sm:text-sm font-medium">By Plate</span>
                   </button>
                 </div>
               </div>
@@ -333,7 +368,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                     onChange={(e) => setVinNumber(e.target.value.toUpperCase())}
                     placeholder="Enter VIN number"
                     required
-                    className="h-12 pr-10"
+                    className="h-11 sm:h-12 pr-10 text-sm sm:text-base"
                     maxLength={17}
                   />
                   <button
@@ -357,7 +392,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                   onChange={(e) => setPlateNumber(e.target.value.toUpperCase())}
                   placeholder="Enter Plate Number"
                   required
-                  className="h-12"
+                  className="h-11 sm:h-12 text-sm sm:text-base"
                 />
                 <p className="text-xs text-gray-500 mt-1">Enter your vehicle&apos;s license plate number</p>
               </div>
@@ -368,7 +403,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 Vehicle Type
               </Label>
               <Select value={vehicleType} onValueChange={setVehicleType}>
-                <SelectTrigger className="h-12">
+                <SelectTrigger className="h-11 sm:h-12 text-sm sm:text-base">
                   <SelectValue placeholder="Select vehicle type" />
                 </SelectTrigger>
                 <SelectContent className="z-[10000]">
@@ -382,6 +417,36 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
             </div>
 
             <div>
+              <Label htmlFor="customerName" className="block text-sm font-semibold text-gray-900 mb-2">
+                Full Name
+              </Label>
+              <Input
+                id="customerName"
+                type="text"
+                value={customerName}
+                onChange={(e) => setCustomerName(e.target.value)}
+                placeholder="Enter your full name"
+                required
+                className="h-11 sm:h-12 text-sm sm:text-base"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="customerPhone" className="block text-sm font-semibold text-gray-900 mb-2">
+                Phone Number
+              </Label>
+              <Input
+                id="customerPhone"
+                type="tel"
+                value={customerPhone}
+                onChange={(e) => setCustomerPhone(e.target.value)}
+                placeholder="Enter your phone number"
+                required
+                className="h-11 sm:h-12 text-sm sm:text-base"
+              />
+            </div>
+
+            <div>
               <Label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
                 Email Address
               </Label>
@@ -392,7 +457,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 onChange={(e) => setCustomerEmail(e.target.value)}
                 placeholder="your.email@example.com"
                 required
-                className="h-12"
+                className="h-11 sm:h-12 text-sm sm:text-base"
               />
             </div>
 
@@ -404,7 +469,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 const found = countriesList.find(c => c.code === v)
                 if (found) setSelectedCountry(found)
               }}>
-                <SelectTrigger className="h-12">
+                <SelectTrigger className="h-11 sm:h-12 text-sm sm:text-base">
                   <SelectValue placeholder="Select country" />
                 </SelectTrigger>
                 <SelectContent className="z-[10000] max-h-60 overflow-auto">
@@ -428,13 +493,13 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
 
             <div>
               <Label className="block text-sm font-semibold text-gray-900 mb-2">Package</Label>
-              <div className="flex gap-3">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
                 {packages.map((pkg) => (
                   <button
                     key={pkg.id}
                     type="button"
                     onClick={() => setSelectedPackage(pkg.id)}
-                    className={`flex-1 p-3 rounded-lg border transition-all text-left ${selectedPackage === pkg.id ? 'bg-[#780000] text-white border-transparent shadow' : 'bg-white border-gray-200 hover:shadow-sm'}`}
+                    className={`w-full p-3 rounded-lg border transition-all text-left ${selectedPackage === pkg.id ? 'bg-[#2563eb] text-white border-transparent shadow' : 'bg-white border-gray-200 hover:shadow-sm'}`}
                   >
                     <div className="font-semibold">{pkg.name}</div>
                     <div className="text-sm text-gray-500 mt-1">{formatCurrency(getPrice(pkg.id as any, selectedCountry.currency), selectedCountry.currency, `${selectedCountry.language}-${selectedCountry.code}`)}</div>
@@ -444,17 +509,17 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
             </div>
 
             {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-sm text-red-600">{error}</p>
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-sm text-blue-600">{error}</p>
               </div>
             )}
 
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-col-reverse gap-3 pt-4 sm:flex-row sm:gap-4">
                 <Button
                   type="button"
                   variant="outline"
                   onClick={onClose}
-                  className="flex-1 h-12"
+                  className="w-full h-12 sm:flex-1"
                   disabled={isSubmitting}
                 >
                   {t('form_cancel')}
@@ -462,13 +527,14 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 <Button
                   type="button"
                   onClick={handleContinue}
-                  className="flex-1 h-12 bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full h-12 sm:flex-1 bg-blue-600 hover:bg-blue-700 text-white"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Creating Order...' : t('form_continue')}
                 </Button>
               </div>
           </form>
+          </div>
         </div>
       </div>
     </>

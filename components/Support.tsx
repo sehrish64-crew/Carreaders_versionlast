@@ -1,12 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Megaphone, Clock, Mail } from 'lucide-react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import SwiperCore from "swiper";
 import { Navigation, Autoplay } from "swiper/modules";
 SwiperCore.use([Navigation, Autoplay]);
@@ -16,25 +14,25 @@ const supportStats = [
     icon: Megaphone,
     value: '97%',
     label: 'satisfaction rate',
-    color: 'from-[#780000] to-[#580000]',   // 🔴 changed
-    iconColor: 'text-[#780000]',           // 🔴 changed
-    bgColor: 'bg-[#f3e6e6]',               // 🔴 light red bg
+    color: 'from-[#2563eb] to-[#1d4ed8]',
+    iconColor: 'text-[#2563eb]',
+    bgColor: 'bg-[#eff6ff]',
   },
   {
     icon: Clock,
     value: '24/7',
     label: 'always available',
-    color: 'from-[#780000] to-[#3a0000]',  // 🔴 changed
-    iconColor: 'text-[#780000]',
-    bgColor: 'bg-[#f3e6e6]',
+    color: 'from-[#2563eb] to-[#0ea5e9]',
+    iconColor: 'text-[#2563eb]',
+    bgColor: 'bg-[#eff6ff]',
   },
   {
     icon: Mail,
     value: '12-24h',
     label: 'avg. response time',
-    color: 'from-[#780000] to-[#8b0000]',  // 🔴 changed
-    iconColor: 'text-[#780000]',
-    bgColor: 'bg-[#f3e6e6]',
+    color: 'from-[#2563eb] to-[#38bdf8]',
+    iconColor: 'text-[#2563eb]',
+    bgColor: 'bg-[#eff6ff]',
   },
 ]
 
@@ -68,30 +66,35 @@ export default function Support() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-28 bg-gradient-to-b from-[#fff5f5] to-[#ffecec] overflow-hidden"
+      className="relative py-20 md:py-28 bg-gradient-to-b from-[#eff6ff] to-[#dbeafe] overflow-hidden"
     >
       {/* 🔴 blobs color change only */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-[#780000]/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#580000]/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-20 left-20 w-64 h-64 bg-[#65ACFC]/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#65ACFC]/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* avatars unchanged */}
-        <div className="flex items-center -space-x-3 justify-center mb-10">
+        {/* avatars */}
+        <div className="flex items-center -space-x-3 justify-center mb-10 px-2">
           {avatarImages.map((image, index) => (
-            <img
+            <Image
               key={index}
               src={image}
-              className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg"
+              alt={`Support avatar ${index + 1}`}
+              width={80}
+              height={80}
+              sizes="(max-width: 768px) 56px, 80px"
+              unoptimized
+              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover"
             />
           ))}
         </div>
 
         {/* heading unchanged */}
-        <h2 className="text-4xl font-bold text-gray-900 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 text-center leading-tight px-2">
           Got questions?
           <br />
-          <span className="text-[#780000]">
+          <span className="text-[#2563eb]">
             We’re here to help 24/7
           </span>
         </h2>
@@ -101,11 +104,11 @@ export default function Support() {
           {supportStats.map((stat, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 shadow-lg">
               
-              <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+              <div className={`text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                 {stat.value}
               </div>
 
-              <p className="text-gray-600">{stat.label}</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600">{stat.label}</p>
 
               <stat.icon className={`w-8 h-8 mt-4 ${stat.iconColor}`} />
             </div>

@@ -8,7 +8,7 @@ export default function OrderPay({ priceId, currency, amount }: { priceId?: stri
   return (
     <div className="mt-6 text-center">
       <div className="mb-3 text-sm text-gray-700">Payment Processing</div>
-      <div className="text-sm text-red-600">
+      <div className="text-sm text-blue-600">
         Payment system is currently unavailable. Paddle integration has been removed.
       </div>
     </div>

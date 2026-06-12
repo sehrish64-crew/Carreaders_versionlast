@@ -47,7 +47,7 @@ export default function PaymentSuccess() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-red-700"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-700"></div>
           <p className="mt-4 text-gray-600">Processing your payment...</p>
         </div>
       </div>
@@ -59,14 +59,14 @@ export default function PaymentSuccess() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
-              <span className="text-red-700 text-2xl">✕</span>
+            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 mb-4">
+              <span className="text-blue-700 text-2xl">✕</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">Payment Failed</h1>
             <p className="text-gray-600 mb-4">{error}</p>
             <Button
               onClick={() => router.push('/')}
-              className="bg-red-700 hover:bg-red-800"
+              className="bg-blue-700 hover:bg-blue-800"
             >
               Return to Home
             </Button>
@@ -99,7 +99,7 @@ export default function PaymentSuccess() {
           <div className="space-y-3">
             <Button
               asChild
-              className="w-full bg-red-700 hover:bg-red-800"
+              className="w-full bg-blue-700 hover:bg-blue-800"
             >
               <Link href="/registered-vehicles">View Your Reports</Link>
             </Button>

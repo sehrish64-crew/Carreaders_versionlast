@@ -104,7 +104,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon-192.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#1e40af" />
+        <meta name="theme-color" content="#2563eb" />
       </head>
       <body suppressHydrationWarning className={inter.className} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
         <LayoutWrapper>

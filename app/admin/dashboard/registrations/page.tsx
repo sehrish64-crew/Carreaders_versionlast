@@ -177,7 +177,7 @@ export default function VehicleRegistrationsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Card className="p-4">
           <div className="text-sm text-gray-600 mb-1">Pending</div>
-          <div className="text-2xl font-bold text-[#780000]">{pendingCount}</div>
+          <div className="text-2xl font-bold text-[#2563eb]">{pendingCount}</div>
         </Card>
         <Card className="p-4">
           <div className="text-sm text-gray-600 mb-1">Approved</div>
@@ -185,7 +185,7 @@ export default function VehicleRegistrationsPage() {
         </Card>
         <Card className="p-4">
           <div className="text-sm text-gray-600 mb-1">Rejected</div>
-          <div className="text-2xl font-bold text-red-600">{rejectedCount}</div>
+          <div className="text-2xl font-bold text-blue-600">{rejectedCount}</div>
         </Card>
       </div>
 

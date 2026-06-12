@@ -22,6 +22,20 @@ CREATE TABLE IF NOT EXISTS orders (
   completed_at DATETIME DEFAULT NULL
 );
 
+-- Report submissions table
+CREATE TABLE IF NOT EXISTS report_submissions (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  customer_name VARCHAR(255) DEFAULT NULL,
+  customer_phone VARCHAR(100) DEFAULT NULL,
+  customer_email VARCHAR(255) NOT NULL,
+  vehicle_identifier VARCHAR(100) NOT NULL,
+  vehicle_type VARCHAR(100) NOT NULL,
+  package_id VARCHAR(100) NOT NULL,
+  amount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+  currency VARCHAR(10) NOT NULL DEFAULT 'USD',
+  submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Contact submissions table
 CREATE TABLE IF NOT EXISTS contact_submissions (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,

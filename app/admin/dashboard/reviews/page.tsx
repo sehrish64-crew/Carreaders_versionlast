@@ -135,7 +135,7 @@ export default function AdminReviewsPage() {
           <Star
             key={star}
             className={`w-5 h-5 ${
-              star <= rating ? 'fill-[#780000] text-[#780000]' : 'text-gray-300'
+              star <= rating ? 'fill-[#2563eb] text-[#2563eb]' : 'text-gray-300'
             }`}
           />
         ))}
@@ -238,11 +238,11 @@ export default function AdminReviewsPage() {
                         {pendingTab ? (
                           <>
                             <Button onClick={() => handleApprove(review.id)} className="bg-green-600 hover:bg-green-700 text-white" size="sm"><Check className="w-4 h-4 mr-2" />Approve</Button>
-                            <Button onClick={() => handleReject(review.id)} variant="outline" className="text-[#780000] border-[#D0A0A0] hover:bg-[#E8D0D0]" size="sm">Reject</Button>
-                            <Button onClick={() => handleDelete(review.id)} variant="outline" className="text-red-600 border-red-200 hover:bg-red-50" size="sm"><Trash2 className="w-4 h-4 mr-2" />Delete</Button>
+                            <Button onClick={() => handleReject(review.id)} variant="outline" className="text-[#2563eb] border-[#D0A0A0] hover:bg-[#E8D0D0]" size="sm">Reject</Button>
+                            <Button onClick={() => handleDelete(review.id)} variant="outline" className="text-blue-600 border-blue-200 hover:bg-blue-50" size="sm"><Trash2 className="w-4 h-4 mr-2" />Delete</Button>
                           </>
                         ) : (
-                          <Button onClick={() => handleDelete(review.id)} variant="outline" className="text-red-600 border-red-200 hover:bg-red-50" size="sm"><Trash2 className="w-4 h-4 mr-2" />Delete</Button>
+                          <Button onClick={() => handleDelete(review.id)} variant="outline" className="text-blue-600 border-blue-200 hover:bg-blue-50" size="sm"><Trash2 className="w-4 h-4 mr-2" />Delete</Button>
                         )}
                       </div>
                     </td>

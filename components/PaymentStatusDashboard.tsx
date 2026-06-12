@@ -32,9 +32,9 @@ const STATUS_CONFIG = {
   pending: {
     label: 'Pending',
     icon: '⏳',
-    color: 'bg-yellow-50 border-yellow-200',
-    text: 'text-yellow-700',
-    badge: 'bg-yellow-100 text-yellow-800',
+    color: 'bg-blue-50 border-blue-200',
+    text: 'text-blue-700',
+    badge: 'bg-blue-100 text-blue-800',
   },
   approved: {
     label: 'Approved',
@@ -53,9 +53,9 @@ const STATUS_CONFIG = {
   failed: {
     label: 'Failed',
     icon: '❌',
-    color: 'bg-red-50 border-red-200',
-    text: 'text-red-700',
-    badge: 'bg-red-100 text-red-800',
+    color: 'bg-blue-50 border-blue-200',
+    text: 'text-blue-700',
+    badge: 'bg-blue-100 text-blue-800',
   },
   refunded: {
     label: 'Refunded',
@@ -67,9 +67,9 @@ const STATUS_CONFIG = {
   dispute: {
     label: 'Dispute',
     icon: '⚠️',
-    color: 'bg-orange-50 border-orange-200',
-    text: 'text-orange-700',
-    badge: 'bg-orange-100 text-orange-800',
+    color: 'bg-blue-50 border-blue-200',
+    text: 'text-blue-700',
+    badge: 'bg-blue-100 text-blue-800',
   },
 }
 
@@ -244,11 +244,11 @@ export default function PaymentStatusDashboard() {
 
       {/* Error Message */}
       {error && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 flex items-start gap-3">
-          <AlertCircle className="text-red-600 flex-shrink-0 mt-1" size={20} />
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+          <AlertCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
           <div>
-            <h3 className="font-semibold text-red-800">Error</h3>
-            <p className="text-red-700 text-sm">{error}</p>
+            <h3 className="font-semibold text-blue-800">Error</h3>
+            <p className="text-blue-700 text-sm">{error}</p>
           </div>
         </div>
       )}

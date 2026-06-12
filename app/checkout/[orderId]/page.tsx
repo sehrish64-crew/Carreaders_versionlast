@@ -35,7 +35,7 @@ export default async function CheckoutPage({ params }: { params: Promise<{ order
 
     return (
       <div className="p-6">
-        <div className="text-red-600 font-semibold mb-2">Order not found</div>
+        <div className="text-blue-600 font-semibold mb-2">Order not found</div>
         <div className="mb-2">Tried raw param: <code>{String(rawId)}</code></div>
         <div className="mb-2">Numeric parse: <code>{String(numeric)}</code></div>
         <div className="mb-2">Lookup by numeric id result: <pre className="whitespace-pre-wrap bg-gray-100 p-2 rounded">{JSON.stringify(byId || null, null, 2)}</pre></div>

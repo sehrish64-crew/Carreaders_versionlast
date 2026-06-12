@@ -14,7 +14,7 @@ const contactInfo = [
     icon: Mail,
     title: 'Email',
     details: ['info@carreaders.com'],
-    gradient: 'from-[#780000] to-red-900'
+    gradient: 'from-[#2563eb] to-blue-900'
   },
   {
     icon: MapPin,
@@ -25,7 +25,7 @@ const contactInfo = [
       'UNITED KINGDOM E1 5NF',
       'WhatsApp: +44 7555 979712'
     ],
-    gradient: 'from-[#780000] to-black'
+    gradient: 'from-[#2563eb] to-slate-900'
   }
 ]
 
@@ -80,25 +80,25 @@ export default function ContactUsClient() {
     <div className="relative overflow-hidden bg-white">
 
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#780000]/10 via-white to-[#780000]/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb]/10 via-white to-[#2563eb]/5"></div>
 
-      <div className="absolute -top-20 left-10 w-96 h-96 bg-[#780000]/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-red-200/40 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 left-10 w-96 h-96 bg-[#2563eb]/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
 
       <div ref={heroRef} className="relative container mx-auto px-4 py-16">
 
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#780000]/10 border border-[#780000]/20 rounded-full text-[#780000] font-semibold">
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#2563eb]/10 border border-[#2563eb]/20 rounded-full text-[#2563eb] font-semibold">
             <MessageCircle size={16} />
             Get in Touch
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-6 text-gray-900">
-            Contact <span className="text-[#780000]">Car Readers</span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mt-6 text-gray-900">
+            Contact <span className="text-[#2563eb]">Car Readers</span>
           </h1>
 
-          <p className="text-gray-600 mt-4 text-lg">
+          <p className="text-gray-600 mt-4 text-sm sm:text-base md:text-lg">
             We’re here to help you with vehicle history reports & support anytime.
           </p>
         </div>
@@ -114,10 +114,10 @@ export default function ContactUsClient() {
                 <item.icon />
               </div>
 
-              <h3 className="text-xl font-bold mt-4 text-gray-900">{item.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold mt-4 text-gray-900">{item.title}</h3>
 
               {item.details.map((d, idx) => (
-                <p key={idx} className="text-gray-600 text-sm mt-1">
+                <p key={idx} className="text-gray-600 text-xs sm:text-sm mt-1">
                   {d}
                 </p>
               ))}
@@ -128,11 +128,11 @@ export default function ContactUsClient() {
         {/* FORM */}
         <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
 
-          <div className="bg-gradient-to-r from-[#780000] to-black text-white p-6 md:p-10">
-            <h2 className="text-2xl md:text-3xl font-bold">
+          <div className="bg-gradient-to-r from-[#2563eb] to-slate-900 text-white p-6 md:p-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
               Send us a message
             </h2>
-            <p className="text-white/80 mt-2 text-sm">
+            <p className="text-white/80 mt-2 text-xs sm:text-sm">
               We usually respond within 2–4 hours
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function ContactUsClient() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="focus:ring-[#780000]"
+                className="focus:ring-[#2563eb]"
               />
 
               <Input
@@ -172,13 +172,13 @@ export default function ContactUsClient() {
             )}
 
             {submitError && (
-              <p className="text-red-600">{submitError}</p>
+              <p className="text-blue-600">{submitError}</p>
             )}
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#780000] hover:bg-black text-white py-3 rounded-xl text-lg font-semibold transition-all"
+              className="w-full bg-[#2563eb] hover:bg-black text-white py-3 rounded-xl text-lg font-semibold transition-all"
             >
               <Send className="mr-2" size={18} />
               {isSubmitting ? 'Sending...' : 'Send Message'}

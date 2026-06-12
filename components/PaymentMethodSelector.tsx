@@ -47,7 +47,7 @@ export function PaymentMethodSelector({
           href={stripeUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center w-full px-4 py-3 bg-[#780000] text-white rounded-xl font-semibold hover:bg-[#5a0000] transition"
+          className="inline-flex items-center justify-center w-full px-4 py-3 bg-[#2563eb] text-white rounded-xl font-semibold hover:bg-[#0369a1] transition"
         >
           Pay with Stripe
         </a>

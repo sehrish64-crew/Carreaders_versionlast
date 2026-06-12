@@ -34,13 +34,13 @@ export async function sendCustomerPaymentConfirmation(data: PaymentConfirmationE
         <style>
           body { font-family: Arial, sans-serif; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #780000; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+          .header { background: #fbbf24; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
           .content { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; }
           .footer { background: #f0f0f0; padding: 15px; text-align: center; font-size: 12px; color: #666; }
-          .details { background: white; padding: 15px; margin: 15px 0; border-left: 4px solid #780000; }
+          .details { background: white; padding: 15px; margin: 15px 0; border-left: 4px solid #fbbf24; }
           .detail-row { margin: 8px 0; }
-          .label { font-weight: bold; color: #780000; }
-          .button { background: #780000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 15px 0; }
+          .label { font-weight: bold; color: #fbbf24; }
+          .button { background: #fbbf24; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 15px 0; }
         </style>
       </head>
       <body>
@@ -108,12 +108,12 @@ export async function sendAdminPaymentNotification(data: PaymentConfirmationEmai
         <style>
           body { font-family: Arial, sans-serif; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #780000; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+          .header { background: #fbbf24; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
           .content { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; }
           .footer { background: #f0f0f0; padding: 15px; text-align: center; font-size: 12px; color: #666; }
-          .details { background: white; padding: 15px; margin: 15px 0; border-left: 4px solid #780000; }
+          .details { background: white; padding: 15px; margin: 15px 0; border-left: 4px solid #fbbf24; }
           .detail-row { margin: 8px 0; }
-          .label { font-weight: bold; color: #780000; }
+          .label { font-weight: bold; color: #fbbf24; }
           .alert { background: #fff3cd; border: 1px solid #ffc107; padding: 10px; margin: 10px 0; border-radius: 3px; }
         </style>
       </head>

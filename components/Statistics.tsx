@@ -60,7 +60,7 @@
 //   // Placeholder avatars - you can replace with actual user images
 //   const avatars = [
 //     { initials: 'JD', color: 'bg-gradient-to-br from-blue-400 to-blue-600' },
-//     { initials: 'SM', color: 'bg-gradient-to-br from-orange-400 to-orange-600' },
+//     { initials: 'SM', color: 'bg-gradient-to-br from-blue-400 to-blue-600' },
 //     { initials: 'AC', color: 'bg-gradient-to-br from-green-400 to-green-600' },
 //   ]
 
@@ -126,7 +126,7 @@
 //                   </div>
 
 //                   {/* Floating accent */}
-//                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-bounce"></div>
+//                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full animate-bounce"></div>
 //                 </div>
 
 //                 {/* Metric Value and Label */}

@@ -23,8 +23,8 @@ export default function PaddleDebugPage() {
           </div>
 
           <div id="paddle-status" className="bg-[#E8D0D0] border border-[#D0A0A0] rounded p-4">
-            <h3 className="font-semibold text-[#580000] mb-2">Paddle Status:</h3>
-            <div className="text-sm text-[#780000]">
+            <h3 className="font-semibold text-[#1d4ed8] mb-2">Paddle Status:</h3>
+            <div className="text-sm text-[#2563eb]">
               <p>Waiting for Paddle.js script to load...</p>
             </div>
           </div>
@@ -38,8 +38,8 @@ export default function PaddleDebugPage() {
               const timeStr = new Date().toLocaleTimeString();
               const colors = {
                 success: 'text-green-900 bg-green-50 border-green-200',
-                error: 'text-red-900 bg-red-50 border-red-200',
-                warning: 'text-[#580000] bg-[#E8D0D0] border-[#D0A0A0]',
+                error: 'text-blue-900 bg-blue-50 border-blue-200',
+                warning: 'text-[#1d4ed8] bg-[#E8D0D0] border-[#D0A0A0]',
                 info: 'text-blue-900 bg-blue-50 border-blue-200'
               };
               statusDiv.innerHTML = '<h3 class="font-semibold mb-2">Paddle Status:</h3>' +

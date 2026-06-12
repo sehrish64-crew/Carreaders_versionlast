@@ -138,7 +138,7 @@ export default function AdminLayout({
             <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <span className="truncate flex-1">{t('admin_orders')}</span>
             {counts.orders > 0 && (
-              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-red-600 text-white text-xs font-semibold flex-shrink-0">{counts.orders}</span>
+              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs font-semibold flex-shrink-0">{counts.orders}</span>
             )}
           </Link>
 
@@ -154,7 +154,7 @@ export default function AdminLayout({
             <Star className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             {t('admin_reviews')}
             {counts.reviews > 0 && (
-              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-red-600 text-white text-xs font-semibold">{counts.reviews}</span>
+              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs font-semibold">{counts.reviews}</span>
             )}
           </Link>
 
@@ -168,7 +168,7 @@ export default function AdminLayout({
             <MessageSquare className="w-5 h-5" />
             {t('nav_contact')}
             {counts.contacts > 0 && (
-              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-red-600 text-white text-xs font-semibold">{counts.contacts}</span>
+              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs font-semibold">{counts.contacts}</span>
             )}
           </Link>
 
@@ -184,7 +184,7 @@ export default function AdminLayout({
             <Car className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <span className="truncate flex-1">Vehicle Registrations</span>
             {counts.registrations > 0 && (
-              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-red-600 text-white text-xs font-semibold flex-shrink-0">{counts.registrations}</span>
+              <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs font-semibold flex-shrink-0">{counts.registrations}</span>
             )}
           </Link>
 
@@ -203,7 +203,7 @@ export default function AdminLayout({
         <div className="p-4 border-t border-gray-200">
           <button
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium text-red-600 rounded-lg hover:bg-red-50 transition-colors"
+            className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
           >
             <LogOut className="w-5 h-5" />
             {t('admin_logout') }

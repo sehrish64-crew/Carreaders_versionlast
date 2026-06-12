@@ -283,7 +283,7 @@ export default function VisualDamageDetector(): JSX.Element {
         </div>
 
         {error && (
-          <div className="p-4 bg-red-50 border-2 border-red-200 rounded-xl text-red-700 font-semibold flex items-center gap-2">
+          <div className="p-4 bg-blue-50 border-2 border-blue-200 rounded-xl text-blue-700 font-semibold flex items-center gap-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -298,15 +298,15 @@ export default function VisualDamageDetector(): JSX.Element {
               result.overallAssessment === 'None' 
                 ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300' 
                 : result.overallAssessment === 'Severe'
-                ? 'bg-gradient-to-br from-red-50 to-orange-50 border-red-300'
+                ? 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300'
                 : result.overallAssessment === 'Moderate'
-                ? 'bg-gradient-to-br from-[#E8D0D0] to-[#D0A0A0] border-[#D0A0A0]'
-                : 'bg-gradient-to-br from-[#E8D0D0] to-[#D0A0A0] border-[#D0A0A0]'
+                ? 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300'
+                : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300'
             }`}>
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className={`text-lg sm:text-2xl font-black ${
-                    result.overallAssessment === 'None' ? 'text-green-700' : result.overallAssessment === 'Severe' ? 'text-red-700' : 'text-orange-700'
+                    result.overallAssessment === 'None' ? 'text-green-700' : result.overallAssessment === 'Severe' ? 'text-blue-700' : 'text-blue-700'
                   }`}>
                     {result.totalDetected === 0 
                       ? '✓ No Damage' 
@@ -318,10 +318,10 @@ export default function VisualDamageDetector(): JSX.Element {
                   result.overallAssessment === 'None'
                     ? 'bg-green-200 text-green-900'
                     : result.overallAssessment === 'Severe'
-                    ? 'bg-red-200 text-red-900'
+                    ? 'bg-blue-200 text-blue-900'
                     : result.overallAssessment === 'Moderate'
-                    ? 'bg-orange-200 text-orange-900'
-                    : 'bg-[#D0A0A0] text-[#580000]'
+                    ? 'bg-blue-200 text-blue-900'
+                    : 'bg-blue-200 text-blue-900'
                 }`}>
                   {result.overallAssessment}
                 </span>
@@ -342,7 +342,7 @@ export default function VisualDamageDetector(): JSX.Element {
                     key={idx}
                     className={`p-5 rounded-2xl border-2 shadow-md hover:shadow-lg transition-all ${
                       damage.type === 'Dent'
-                        ? 'bg-gradient-to-br from-pink-50 to-red-50 border-pink-200'
+                        ? 'bg-gradient-to-br from-pink-50 to-blue-50 border-pink-200'
                         : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-200'
                     }`}
                   >
