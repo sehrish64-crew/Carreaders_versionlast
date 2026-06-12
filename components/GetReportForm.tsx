@@ -249,10 +249,10 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 <button
                   type="button"
                   onClick={() => setVehicleIdType('vin')}
-                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 ${
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 touch-manipulation ${
                     vehicleIdType === 'vin'
-                      ? 'bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white shadow-lg shadow-[#2563eb]/40 scale-105'
-                      : 'bg-white border-2 border-[#2563eb]/30 text-foreground hover:border-[#2563eb]/60 hover:bg-[#2563eb]/5'
+                      ? 'bg-slate-100 border border-[#2563eb] text-foreground shadow-sm'
+                      : 'bg-white border border-slate-300 text-foreground hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <Key className="w-5 h-5" />
@@ -261,10 +261,10 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
                 <button
                   type="button"
                   onClick={() => setVehicleIdType('plate')}
-                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 ${
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 touch-manipulation ${
                     vehicleIdType === 'plate'
-                      ? 'bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white shadow-lg shadow-[#2563eb]/40 scale-105'
-                      : 'bg-white border-2 border-[#2563eb]/30 text-foreground hover:border-[#2563eb]/60 hover:bg-[#2563eb]/5'
+                      ? 'bg-slate-100 border border-[#2563eb] text-foreground shadow-sm'
+                      : 'bg-white border border-slate-300 text-foreground hover:border-slate-400 hover:bg-slate-50'
                   }`}
                 >
                   <Hash className="w-5 h-5" />

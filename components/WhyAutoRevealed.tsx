@@ -58,7 +58,7 @@ export default function WhyCarReaders() {
                   Starting from
                 </div>
                 <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-blue-400 drop-shadow-lg">
-                  $40
+                  £30
                 </div>
               </div>
 

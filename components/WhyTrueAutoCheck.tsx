@@ -63,7 +63,7 @@ export default function WhyAutoFactsCheck() {
                   Starting from
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 animate-pulse">
-                  $40
+                  £30
                 </div>
               </div>
 
