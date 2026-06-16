@@ -33,7 +33,12 @@ export default function Header() {
 
             {/* LOGO */}
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.png" alt="Car Readers" className="h-7 sm:h-8 md:h-9 w-auto" />
+              <div className="flex items-center gap-1">
+                <span className="text-lg sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-600 to-blue-400 bg-clip-text text-transparent">
+                  Car Readers
+                </span>
+              
+              </div>
             </Link>
 
             {/* NAV */}
@@ -85,7 +90,12 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-white p-4 sm:p-6">
           <div className="flex justify-between items-center mb-6">
-            <img src="/logo.png" className="h-6 sm:h-7 w-auto" />
+            <div className="flex items-center gap-1">
+              <span className="text-lg font-extrabold bg-gradient-to-r from-gray-900 via-blue-600 to-blue-400 bg-clip-text text-transparent">
+                Car Readers
+              </span>
+            
+            </div>
             <button onClick={() => setIsMobileMenuOpen(false)}>
               <X />
             </button>
