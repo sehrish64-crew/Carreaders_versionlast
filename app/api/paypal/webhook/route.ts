@@ -186,7 +186,7 @@ export async function POST(request: NextRequest) {
                     
                     <div style="background: #f3e8ff; padding: 15px; border-radius: 8px; border-left: 4px solid #a855f7; margin: 20px 0;">
                       <p style="margin: 0; color: #6b21a8;"><strong>⏳ Report Generation:</strong></p>
-                      <p style="margin: 8px 0 0 0; color: #6b21a8;">Your comprehensive vehicle history report will be ready within 12-13 hours. We will send you another email with your report details.</p>
+                      <p style="margin: 8px 0 0 0; color: #6b21a8;">Your comprehensive  Digital pdf report will be ready within 12-13 hours. We will send you another email with your report details.</p>
                     </div>
                     
                     <p style="margin-top: 20px; color: #666; font-size: 14px;">Thank you for choosing Car Readers! If you have any questions, please contact us.</p>
@@ -229,7 +229,7 @@ export async function POST(request: NextRequest) {
                     </ul>
                   </div>
                   
-                  <p style="margin-top: 20px; color: #666; font-size: 14px;">The customer was notified about their successful payment. Proceed with generating their vehicle history report.</p>
+                  <p style="margin-top: 20px; color: #666; font-size: 14px;">The customer was notified about their successful payment. Proceed with generating their  Digital pdf report.</p>
                 </div>
               `
               

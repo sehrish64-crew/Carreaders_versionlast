@@ -86,7 +86,7 @@ export default function CheckoutClient({ order }: { order: any }) {
             <div className="mt-2 text-sm md:text-base text-muted-foreground">{packageKey} • {order.currency} {Number(displayAmount).toFixed(2)}</div>
 
             <div className="mt-4 text-sm md:text-base text-foreground space-y-2">
-              <div className="flex items-center gap-2"><span className="text-green-600">✓</span> Deep vehicle history check</div>
+              <div className="flex items-center gap-2"><span className="text-green-600">✓</span> Deep  Digital pdf report check</div>
               <div className="flex items-center gap-2"><span className="text-green-600">✓</span> Ownership & accident records</div>
               <div className="flex items-center gap-2"><span className="text-green-600">✓</span> Photos & title status</div>
             </div>

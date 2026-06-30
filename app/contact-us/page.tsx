@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Get in touch with Car Readers for any inquiries, support, or sales questions. Available 24/7 to help you.',
   openGraph: {
     title: 'Contact Car Readers',
-    description: 'Reach out to our customer support team for assistance with vehicle history reports.',
+    description: 'Reach out to our customer support team for assistance with Digital pdf reports.',
     url: 'https://carreaders.com/contact-us',
     type: 'website',
   },

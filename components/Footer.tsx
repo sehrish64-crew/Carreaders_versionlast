@@ -80,9 +80,6 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm text-white/70">
-            Office: SIU OFFICES, 4-6 GREATOREX STREET, LONDON, UNITED KINGDOM E1 5NF
-          </p>
           <p className="text-sm text-white/70 mt-1">
             WhatsApp: <a href="https://wa.me/447555979712" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-emerald-300 hover:text-white" aria-label="WhatsApp +44 7828 760930">
               <MessageCircle className="w-4 h-4" />

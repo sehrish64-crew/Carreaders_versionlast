@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Read the terms and conditions for using Car Readers services. Understand your rights and responsibilities.',
   openGraph: {
     title: 'Terms and Conditions - Car Readers',
-      description: 'Our terms explain the rules for using Car Readers vehicle history reports.',
+      description: 'Our terms explain the rules for using Car Readers Digital pdf reports.',
     url: 'https://autofactscheck.com/terms',
     type: 'website',
   },

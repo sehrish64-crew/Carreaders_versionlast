@@ -25,7 +25,7 @@ export default function PrivacyPageClient() {
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 space-y-3">
               <p className="text-gray-700"><strong>Key Points:</strong></p>
               <ul className="list-disc list-inside space-y-1 ml-2">
-                <li>We collect only necessary information to provide our vehicle history services.</li>
+                <li>We collect only necessary information to provide our  Digital pdf report services.</li>
                 <li>We do not sell your personal information to third parties.</li>
               </ul>
             </div>
@@ -38,7 +38,7 @@ export default function PrivacyPageClient() {
             <p className="mt-3">We may collect personal information that you voluntarily provide to us when you:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
               {/* <li>Register for an account</li> */}
-              <li>Purchase a vehicle history report</li>
+              <li>Purchase a  Digital pdf report</li>
               <li>Contact customer support</li>
               {/* <li>Subscribe to our newsletter or marketing communications</li> */}
             </ul>
@@ -77,7 +77,7 @@ export default function PrivacyPageClient() {
             <h2 className="text-2xl font-semibold text-gray-900">2. How We Use Your Information</h2>
             <p className="mt-3">We use the information we collect for the following purposes:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li><strong>Service Delivery:</strong> To provide vehicle history reports and related services</li>
+              <li><strong>Service Delivery:</strong> To provide Digital pdf reports and related services</li>
               <li><strong>Payment Processing:</strong> To process transactions securely through our payment processor</li>
               <li><strong>Customer Support:</strong> To respond to your inquiries and provide assistance</li>
               <li><strong>Improvement:</strong> To analyze usage patterns and improve our website and services</li>
@@ -95,7 +95,7 @@ export default function PrivacyPageClient() {
             <p className="mt-3">We work with third-party service providers who assist us in operating our website and services:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
               <li>Payment Processors: Paypro Global (for secure payment processing)</li>
-              <li>Data Providers: Vehicle history data sources</li>
+              <li>Data Providers:  Digital pdf report data sources</li>
               <li>Analytics Services: Google Analytics and similar tools</li>
               <li>Email Services: For sending communications</li>
               <li>Hosting Providers: For website infrastructure</li>

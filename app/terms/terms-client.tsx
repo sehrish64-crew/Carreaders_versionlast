@@ -26,14 +26,14 @@ export default function TermsPageClient() {
 
           <section>
             <h2 className="text-2xl font-semibold text-gray-900">2. About Nexlify Labs LTD</h2>
-            <p className="mt-3">Nexlify Labs LTD provides vehicle history reports and VIN check services through Car Readers. Our services include access to vehicle history information, accident records, title information, odometer readings, and other vehicle-related data.</p>
+            <p className="mt-3">Nexlify Labs LTD provides  Digital pdf report services and VIN check services through Car Readers. Our services include access to vehicle history information, accident records, title information, odometer readings, and other vehicle-related data.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-gray-900">3. Services Provided</h2>
             <p className="mt-3">Nexlify Labs LTD offers the following services:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li>Vehicle history reports</li>
+              <li>Digital pdf reports</li>
               <li>VIN (Vehicle Identification Number) decoder</li>
               <li>License plate lookup</li>
               <li>Vehicle damage and accident history</li>

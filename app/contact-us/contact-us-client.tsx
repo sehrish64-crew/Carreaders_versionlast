@@ -18,11 +18,8 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: 'Office',
+    title: 'WhatsApp',
     details: [
-      'SIU OFFICES, 4-6 GREATOREX STREET',
-      'LONDON',
-      'UNITED KINGDOM E1 5NF',
       'WhatsApp: +44 7555 979712'
     ],
     gradient: 'from-[#2563eb] to-slate-900'
@@ -99,7 +96,7 @@ export default function ContactUsClient() {
           </h1>
 
           <p className="text-gray-600 mt-4 text-sm sm:text-base md:text-lg">
-            We’re here to help you with vehicle history reports & support anytime.
+            We’re here to help you with Digital pdf reports & support anytime.
           </p>
         </div>
 

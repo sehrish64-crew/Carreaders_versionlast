@@ -54,9 +54,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: `Car Readers - ${tmap['banner_title'] || "Check any car's history"}`,
-    keywords: ['car history', 'vehicle report', 'VIN check', 'used car', 'vehicle history check', 'car background check'],
-    authors: [{ name: 'AutoFactsCheck' }],
-    creator: 'AutoFactsCheck',
+    description: 'Access secure digital PDF documents online with fast processing, professional formatting, instant delivery, and a reliable user experience.',
+    keywords: [
+      'digital pdf documents',
+      'online pdf service',
+      'secure pdf download',
+      'instant digital documents',
+      'professional pdf reports',
+      'online document platform',
+      'download pdf online'
+    ], authors: [{ name: 'CarReaders' }],
+    creator: 'CarReaders',
     icons: {
       icon: [
         { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
@@ -66,19 +74,19 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       type: 'website',
-      url: 'https://autofactscheck.com',
+      url: 'https://CarReaders.com',
       title: `Car Readers - ${tmap['banner_title'] || "Check any car's history"}`,
-      siteName: 'AutoFactsCheck',
+      siteName: 'CarReaders',
       images: [
-        { url: 'https://autofactscheck.com/banner-hero.png', width: 1200, height: 630 },
+        { url: 'https://CarReaders.com/banner-hero.png', width: 1200, height: 630 },
       ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Car Readers - ${tmap['banner_title'] || "Check any car's history"}`,
-      description: tmap['banner_subtitle'] || "VIN Check Can Save You Thousands — Get a Full Vehicle History Report",
+      description: tmap['banner_subtitle'] || "VIN Check Can Save You Thousands — Get a Full  Digital pdf report",
       images: [
-        { url: 'https://autofactscheck.com/banner-hero.png' },
+        { url: 'https://CarReaders.com/banner-hero.png' },
       ],
     },
   }
@@ -99,7 +107,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
-        <link rel="canonical" href="https://autofactscheck.com" />
+        <link rel="canonical" href="https://CarReaders.com" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" type="image/x-icon" />
         <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon-192.png" />

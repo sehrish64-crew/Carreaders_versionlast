@@ -70,8 +70,7 @@ export default function VinChecker() {
               </h2>
 
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90">
-                Instantly uncover accident history, mileage records, ownership changes, and hidden issues before buying any car.
-              </p>
+Instantly access structured digital PDF documents with key record insights, usage details, and important data points through Car Readers.              </p>
 
               <div className="flex items-center space-x-2 text-white/90">
                 <CheckCircle className="w-5 h-5" />

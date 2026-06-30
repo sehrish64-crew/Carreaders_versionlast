@@ -45,7 +45,7 @@ export default function RefundPolicyPageClient() {
             <h2 className="text-2xl font-semibold text-gray-900">Definitions</h2>
             <ul className="mt-3 space-y-3">
               <li><strong>Consumer:</strong> A Buyer purchasing for personal, non-commercial use</li>
-              <li><strong>Digital Content:</strong> Data supplied in digital form, including vehicle history reports</li>
+              <li><strong>Digital Content:</strong> Data supplied in digital form, including Digital pdf reports</li>
               <li><strong>Merchant:</strong>
                 <ul className="mt-2 ml-4 space-y-1 list-disc list-inside">
                   <li><strong>UK :</strong> Mora St, London EC1V, United Kingdom
@@ -53,7 +53,7 @@ export default function RefundPolicyPageClient() {
                   {/* <li><strong>Rest of World:</strong> Merchant.com Market Limited, Judd House, 18-29 Mora Street, London EC1V 8BT, UK</li> */}
                 </ul>
               </li>
-              <li><strong>Product:</strong> Digital vehicle history reports and related services provided by Nexlify Labs LTD</li>
+              <li><strong>Product:</strong> Digital Digital pdf reports and related services provided by Nexlify Labs LTD</li>
               <li><strong>Supplier:</strong> Nexlify Labs LTD</li>
               <li><strong>Services:</strong> Online services enabling the purchase and delivery of Products via Merchant</li>
               <li><strong>Transaction:</strong> Purchase of a Product through the Services</li>

@@ -72,7 +72,7 @@ export default function WhyAutoFactsCheck() {
                   }`}
               >
                 <p className="text-[11px] sm:text-sm md:text-lg lg:text-xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">
-                  for a vehicle history report
+                  for a  Digital pdf report
                 </p>
                 <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-white/90 leading-relaxed">
                   Verify the VIN number and gain valuable insights before buying a used car. Get started today for peace of mind.
@@ -94,6 +94,28 @@ export default function WhyAutoFactsCheck() {
             </div>
           </div>
         </div>
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          <div className="rounded-3xl border border-gray-200 p-8 bg-slate-50 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Trusted Digital Reports</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Receive a professionally formatted Sird Digital pdf report with verified vehicle history insights, accident data, ownership records, and mileage checks.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-gray-200 p-8 bg-slate-50 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Fast VIN Verification</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Enter your VIN or plate number and get a complete verification summary instantly, so you can make confident buying decisions faster.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-gray-200 p-8 bg-slate-50 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Global Data Coverage</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Our platform aggregates over 900 global data sources to provide a comprehensive report tailored to your market and vehicle history needs.
+            </p>
+          </div>
+        </div>
+
         {/* Statistics Section - Professional & Premium with Animations */}
         <div className="hidden md:grid md:grid-cols-1 gap-6">
           <div className="mt-20 pt-12 border-t border-gray-200 animate-fade-in">
@@ -248,6 +270,10 @@ export default function WhyAutoFactsCheck() {
                     </div>
                   </div>
                 </div>
+
+                <p className="text-sm text-white/80 max-w-xl leading-relaxed">
+                  Hear from customers who trust Sird Digital pdf reports for clear, reliable used car insight — verified VIN reads, accident history, and ownership checks in one report.
+                </p>
 
                 <div className="space-y-2">
                   <h3 className="text-3xl md:text-4xl font-black text-white drop-shadow-lg">

@@ -58,7 +58,7 @@ export default function CheckoutSummary({ order }: { order: any }) {
 
       <div className="mt-4">
         <ul className="text-sm space-y-2">
-          <li className="flex items-start gap-2"><span className="text-green-600 font-semibold">✓</span> Instant vehicle history lookup</li>
+          <li className="flex items-start gap-2"><span className="text-green-600 font-semibold">✓</span> Instant  Digital pdf report lookup</li>
           <li className="flex items-start gap-2"><span className="text-green-600 font-semibold">✓</span> Ownership & accident records</li>
           <li className="flex items-start gap-2"><span className="text-green-600 font-semibold">✓</span> Trusted data sources</li>
         </ul>

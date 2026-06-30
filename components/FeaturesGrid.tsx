@@ -42,12 +42,11 @@ export default function FeaturesGrid() {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 animate-fade-in px-1 sm:px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 leading-tight">
-            Make Smarter Car Decisions with Verified History Reports
+            Make Smarter Car Decisions with Verified Digital pdf reports
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-            Instantly uncover hidden issues, ownership records, mileage accuracy, and accident history with Car Readers.
-          </p>
+            Instantly access structured digital PDF documents with key record insights, usage details, and important data points through Car Readers.          </p>
         </div>
 
         {/* Tabs */}

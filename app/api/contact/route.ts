@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import pool from '@/lib/mysql'
 import { sendEmail } from '@/app/api/send-email/route'
 
+function isDbConnectionError(error: unknown) {
+  return Boolean(
+    error &&
+      (String(error).includes('ECONNREFUSED') ||
+        String(error).includes('ER_BAD_DB_ERROR') ||
+        String(error).includes('connect ECONNREFUSED') ||
+        String(error).includes('getaddrinfo'))
+  )
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -14,14 +24,24 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const conn = await pool.getConnection()
+    let conn
     try {
+      conn = await pool.getConnection()
       await conn.execute(
         'INSERT INTO contact_submissions (name, email, subject, message, status, created_at) VALUES (?, ?, ?, ?, ?, NOW())',
         [name, email, subject, message, 'new']
       )
+    } catch (dbError) {
+      console.error('Contact form DB insert failed:', dbError)
+      if (isDbConnectionError(dbError)) {
+        return NextResponse.json(
+          { error: 'Contact service is temporarily unavailable. Please try again later.' },
+          { status: 503 }
+        )
+      }
+      throw dbError
     } finally {
-      conn.release()
+      conn?.release()
     }
 
     // Send confirmation email to user
@@ -93,7 +113,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error processing contact form:', error)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
     )
   }

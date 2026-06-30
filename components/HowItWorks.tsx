@@ -82,9 +82,8 @@ export default function HowItWorks() {
             return (
               <div
                 key={index}
-                className={`transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-                }`}
+                className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                  }`}
               >
 
                 <div className="flex gap-5 items-start">

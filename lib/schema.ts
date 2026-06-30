@@ -28,7 +28,7 @@ export function getLocalBusinessSchema() {
       '@type': 'Country',
       name: 'Global',
     },
-    serviceType: 'Vehicle History Reports',
+    serviceType: 'Digital pdf reports',
   };
 }
 
@@ -37,7 +37,7 @@ export function getProductSchema() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Car History Report',
-    description: "Complete vehicle history check from 900+ global databases",
+    description: "Complete  Digital pdf report check from 900+ global databases",
     brand: {
       '@type': 'Brand',
       name: 'Car Readers',

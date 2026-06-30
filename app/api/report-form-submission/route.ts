@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
         
         <div style="background: #d1fae5; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981; margin: 20px 0;">
           <p style="margin: 0; color: #065f46;"><strong>⏳ Report Generation:</strong></p>
-          <p style="margin: 8px 0 0 0; color: #065f46;">Your comprehensive vehicle history report will be ready in approximately 12-13 hours. We will send you another email with your report details.</p>
+<p style="margin: 8px 0 0 0; color: #065f46;">Your comprehensive  Digital pdf report will be ready in approximately 12-13 hours. We will send you another email with your report details.</p>
         </div>
         
         <p style="margin-top: 20px; color: #666; font-size: 14px;">Thank you for using Car Readers!</p>

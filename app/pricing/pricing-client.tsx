@@ -89,7 +89,7 @@ export default function PricingClient() {
             </h1>
 
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
-              Get instant vehicle history reports with trusted data sources.
+              Get instant Digital pdf reports with trusted data sources.
             </p>
           </div>
 

@@ -64,11 +64,10 @@ export default function WhyCarReaders() {
 
               <div>
                 <p className="text-white text-base sm:text-lg font-semibold">
-                  for a vehicle history report
+                  for a Digital pdf report
                 </p>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base">
-                  Verify VIN and avoid risky car purchases before you buy.
-                </p>
+                  Access structured digital PDF documents to help you review important information and make informed decisions.                </p>
               </div>
 
               <button
@@ -87,26 +86,26 @@ export default function WhyCarReaders() {
 
           {[
             {
-              title: "Verification Method",
-              value: "By VIN & Plate",
+              title: "Report Access Method",
+              value: "Secure Input System",
               icon: "✓",
               color: "#2563eb"
             },
             {
-              title: "Daily Searches",
-              value: "45K+",
+              title: "Daily Activity",
+              value: "45K+ Requests",
               icon: "↗",
               color: "#9b111e"
             },
             {
-              title: "Data Sources",
-              value: "70+",
+              title: "Connected Sources",
+              value: "Multiple Verified Datasets",
               icon: "⊕",
               color: "#c1121f"
             },
             {
-              title: "Report Scope",
-              value: "Complete History",
+              title: "Report Type",
+              value: "Structured Digital PDF",
               icon: "◆",
               color: "#2563eb"
             }
@@ -157,8 +156,7 @@ export default function WhyCarReaders() {
                 1,000,000+ Trusted Users
               </h3>
               <p className="text-white/80 text-sm sm:text-base">
-                Across 150+ countries using secure VIN reports.
-              </p>
+                Global access in 150+ countries with structured digital reports.              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

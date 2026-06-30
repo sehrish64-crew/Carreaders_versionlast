@@ -255,7 +255,7 @@ export default function Banner() {
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                         <h3 className="font-bold text-gray-900 mb-1">Comprehensive Report</h3>
-                        <p className="text-sm text-gray-600">Complete vehicle history in seconds</p>
+                        <p className="text-sm text-gray-600">Complete  Digital pdf report in seconds</p>
                       </div>
                     </div>
                   </div>
@@ -369,7 +369,7 @@ export default function Banner() {
               {/* Information Box */}
               <div className="bg-blue-50 border-l-4 border-blue-600 p-5 rounded-r">
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  <span className="font-semibold text-blue-900">Information Notice:</span> This report contains basic vehicle information extracted from the National Highway Traffic Safety Administration (NHTSA) VIN decoder database. For a comprehensive vehicle history report including accident records, ownership history, title information, and more, please upgrade to the Full Report.
+                  <span className="font-semibold text-blue-900">Information Notice:</span> This report contains basic vehicle information extracted from the National Highway Traffic Safety Administration (NHTSA) VIN decoder database. For a comprehensive  Digital pdf report including accident records, ownership history, title information, and more, please upgrade to the Full Report.
                 </p>
               </div>
 
