@@ -26,6 +26,16 @@ const packages = [
   { id: 'basic', name: 'Basic Report' },
 ]
 
+const PAYPAL_CHECKOUT_URLS: Record<'basic' | 'standard' | 'premium', string> = {
+  basic: 'https://www.paypal.com/ncp/payment/6RKULHJWNZ2SS',
+  standard: 'https://www.paypal.com/ncp/payment/3RVWWCVVGJWLC',
+  premium: 'https://www.paypal.com/ncp/payment/CCYQ5SPE5PZ56',
+}
+
+const getPaymentUrl = (packageId: string) => {
+  return PAYPAL_CHECKOUT_URLS[packageId as keyof typeof PAYPAL_CHECKOUT_URLS] || PAYPAL_CHECKOUT_URLS.basic
+}
+
 const formatPhoneNumber = (value: string) => {
   const digits = value.replace(/\D/g, '')
 
@@ -111,8 +121,6 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
     }
   }, [preselectedPackage])
 
-  const SHOPIFY_URL = 'http://pdf-tech-2.myshopify.com/products/digital-pdf'
-
   const validateForm = () => {
     setError('')
     if (!vehicleType) return setError('Select vehicle type'), false
@@ -160,9 +168,9 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
 
       // Store payment form data in sessionStorage for use on payment page
       sessionStorage.setItem('paymentFormData', JSON.stringify(formData))
-      
-      // Redirect to payment page
-      window.location.href = '/checkout'
+
+      // Redirect to the matching PayPal checkout link
+      window.location.href = getPaymentUrl(selectedPackage)
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : 'Failed to process payment. Please try again.'
@@ -198,7 +206,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
       // Persist for checkout tracing if needed
       try { sessionStorage.setItem('paymentFormData', JSON.stringify(formData)) } catch (e) {}
 
-      if (typeof window !== 'undefined') window.location.href = SHOPIFY_URL
+      if (typeof window !== 'undefined') window.location.href = getPaymentUrl(selectedPackage)
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to submit form.'
       setError(errorMessage)
@@ -488,7 +496,7 @@ export default function GetReportForm({ isOpen, onClose, preselectedPackage, pre
               >
                 {isSubmitting
                   ? 'Processing...'
-                  : `Continue to Payment - ${formatCurrency(getPrice('basic' as any, selectedCountry.currency), selectedCountry.currency)}`}
+                  : `Continue to Payment - ${formatCurrency(getPrice(selectedPackage as any, selectedCountry.currency), selectedCountry.currency)}`}
               </Button>
             </div>
           </form>

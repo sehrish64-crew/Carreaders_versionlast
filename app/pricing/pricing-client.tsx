@@ -33,6 +33,44 @@ const basePricingPlans = [
     ],
     buttonText: 'Select Plan',
   },
+  {
+    name: 'Standard',
+    badge: 'BEST VALUE',
+    badgeColor: 'bg-sky-600',
+    priceKey: 'standard' as const,
+    icon: Crown,
+    popular: false,
+    borderColor: 'border-sky-600',
+    iconBg: 'bg-sky-50',
+    iconColor: 'text-sky-600',
+    features: [
+      'Accident Records',
+      'Theft Records',
+      'Ownership History',
+      'Title Status',
+      'Open Recalls',
+    ],
+    buttonText: 'Select Plan',
+  },
+  {
+    name: 'Premium',
+    badge: 'FULL ACCESS',
+    badgeColor: 'bg-violet-600',
+    priceKey: 'premium' as const,
+    icon: Shield,
+    popular: false,
+    borderColor: 'border-violet-600',
+    iconBg: 'bg-violet-50',
+    iconColor: 'text-violet-600',
+    features: [
+      'All Basic + Standard features',
+      'Full Vehicle History',
+      'Multiple Ownership Records',
+      'Custom Inspection Notes',
+      '24/7 Support',
+    ],
+    buttonText: 'Select Plan',
+  },
 ]
 
 export default function PricingClient() {
@@ -85,7 +123,7 @@ export default function PricingClient() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900">
-              Choose Basic Plan
+              Choose Your Plan
             </h1>
 
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
