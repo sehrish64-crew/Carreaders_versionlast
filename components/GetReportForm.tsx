@@ -27,9 +27,9 @@ const packages = [
 ]
 
 const PAYPAL_CHECKOUT_URLS: Record<'basic' | 'standard' | 'premium', string> = {
-  basic: 'https://www.paypal.com/ncp/payment/6RKULHJWNZ2SS',
-  standard: 'https://www.paypal.com/ncp/payment/3RVWWCVVGJWLC',
-  premium: 'https://www.paypal.com/ncp/payment/CCYQ5SPE5PZ56',
+  basic: 'https://buy.stripe.com/fZu3cwbeg0XJbXVdC8fjG08',
+  standard: 'https://buy.stripe.com/8x23cw0zCayjbXV41yfjG09',
+  premium: 'https://buy.stripe.com/cNieVe1DG7m73rp2XufjG0a',
 }
 
 const getPaymentUrl = (packageId: string) => {
